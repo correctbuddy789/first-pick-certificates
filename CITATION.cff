@@ -6,10 +6,10 @@ authors:
   - family-names: "Nain"
     given-names: "Tushar"
     affiliation: "Grapevine"
-version: "1.0.0"
+version: "1.1.0"
 date-released: "2026-10-13"
 repository-code: "https://github.com/correctbuddy789/first-pick-certificates"
-url: "https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.0.0"
+url: "https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.1.0"
 license:
   - MIT
   - CC-BY-4.0

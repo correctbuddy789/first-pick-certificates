@@ -2,7 +2,7 @@
 
 This package is a frozen research-software snapshot accompanying *When Can a
 Ranking Audit Stop? Certifying First Picks with Unresolved Eligibility*.
-Use the [v1.0.0 release](https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.0.0),
+Use the [v1.1.0 release](https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.1.0),
 packaged manifest, and checksum to identify the exact evaluated files.
 
 The resource uses versioned tags and an [issue tracker](https://github.com/correctbuddy789/first-pick-certificates/issues) for

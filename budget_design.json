@@ -1,0 +1,120 @@
+{
+  "aggregation": {
+    "conditional": "Also report the subset initially ambiguous, with separate explicit denominators. This is secondary, not a replacement for the all-case results.",
+    "figure": "Four panels, factorial/constructed by unit/heterogeneous costs. Plot mean paid cost normalized by initial available total against percentage of instances certified. Points correspond to the fixed six budget fractions; lines connect displayed operating points, without asserting intermediate optimality. Show all seven methods.",
+    "main": "Each case has weight one. Average its four tie-slot indicators and costs first, then average across cases. Retain all initially certified cases in every main denominator.",
+    "metrics": [
+      "certified fraction",
+      "mean queries",
+      "mean paid cost",
+      "mean paid fraction of initial available cost",
+      "positive/negative/unresolved counts averaged within instance",
+      "conditional initially ambiguous versions"
+    ],
+    "strata": [
+      "all",
+      "factorial",
+      "constructed",
+      "unit",
+      "heterogeneous",
+      "factorial_unit",
+      "factorial_heterogeneous",
+      "constructed_unit",
+      "constructed_heterogeneous"
+    ],
+    "uncertainty": "Descriptive deterministic benchmark; no population confidence intervals or significance tests. Shared structural draws and identical deterministic slots are not independent observations."
+  },
+  "budgets": {
+    "denominator": "Sum of stated costs for all initially available query candidates, including logically irrelevant candidates; each budget is that instance-specific sum times its exact Fraction grid value.",
+    "fractions": [
+      "0",
+      "1/16",
+      "1/8",
+      "1/4",
+      "1/2",
+      "1"
+    ],
+    "interpretation": "Synthetic normalized acquisition allowance, not human time or monetary cost. Normalization is policy-independent and fixed before acquisition. The full denominator includes irrelevant labels, so values depend on pool composition.",
+    "rule": "Canonical prefix truncation. Prescribe the same next query as in an unbudgeted run, using all remaining available candidates; halt before paying for or observing it if it exceeds the remaining budget. Do not switch to an affordable query. These are budget-truncated existing methods, not policies optimized for certification probability under a budget.",
+    "zero_total": "Budget is zero at all fractions if the initial available total is zero. These frozen cases have positive available costs."
+  },
+  "execution": {
+    "expected_budget_rows": 193536,
+    "expected_complete_traces": 32256,
+    "optimization": "Generate every complete trace once through the public unified runner. A budgeted result is the longest affordable prefix of that fixed trace. Because queries have nonnegative costs and the full trace stops at the first exact certificate, a truncated prefix is certified iff it includes the entire trace. Check this claim against direct public-runner budget calls on the deterministic verification subset.",
+    "public_api": "benchmark_runner.run_instance or run_case, using policy_runner.run_policy through canonical adapters and the standard public Panel input representation.",
+    "response_access": "Responses are exposed through the guarded answer callback after selection. Full traces are generated without giving a policy future answers; prefix extraction is offline reporting and is not supplied back to selection."
+  },
+  "fixed_utc": "2026-10-13T13:17:20.171380+00:00",
+  "methods": [
+    "uniform_all",
+    "pick_first_max_blockers",
+    "pick_first_uniform_blockers",
+    "uniform_relevant",
+    "cheapest_relevant",
+    "pick_first_cost_normalized_blockers",
+    "allen_round_robin_cached"
+  ],
+  "outputs": [
+    "budget_design.json",
+    "budget-design.md",
+    "budget_study.py",
+    "budget-results.json",
+    "budget-results.csv",
+    "budget-checks.json",
+    "figures/budgeted-acquisition.pdf",
+    "figures/budgeted-acquisition.png",
+    "BUDGET.md"
+  ],
+  "protected_inputs": {
+    "benchmark_extensions.py": "0596297c1a6cd83436d823e8813b129047e0addf94c5c33edc8eca4a09ecae30",
+    "certificates.py": "df49733a4764ba7e788e0aadb4e6ec376bcdb7d7b3f79489f111d8fee2796594",
+    "computational-checks.json": "429ffef5d85cfa12ce43c82dd6eaa54ba4eb9f09d9e9ffe1ad7aa5ffce329de9",
+    "computational-results.csv": "17bfd6495b348f926d8b8e308684f2abe6653bc0e081941d7880ba2df1c6726c",
+    "computational-results.json": "01a659bb6d0b3171f4c7f04ce8e94ede6ba2a706bbb4c231a870d04cc7ca7b8e",
+    "computational_design.json": "59ee3372073974d78f1a115c6b247696fef9992eb1fd57b327c02b773b76018d",
+    "computational_study.py": "ff15e5bfad57f4e60498bd351f8a5b2be8f361ea011e0590fa7869d4c9eb48f8",
+    "dnf_baselines.py": "600d22fafd3233fa5a4d8d79090c1981060b411feeabb07f99b1ed8811b3a2e6",
+    "extension-checks.json": "3785b8f230612772f9189902e702df17c3354981409b089333402e8518a14195",
+    "extension-design.json": "2b82686ad26d44cc2c3fc1462cf04434e881145df11065a10e209b4aac61f052",
+    "extension-results.csv": "5cde7b3d8ce1bd96e6279586877c1d99ddfbe3354cdcf8ce5f660a2603b85e37",
+    "extension-results.json": "8218bab7d14fd8905cef59ce8368b9c58052a2f0e80e4065b5bd47d0f8ad9c4b",
+    "query_policies.py": "a537dbe1575b52ce3b4eb2c86dcedd5e7ee187a65078ef9fcfa60e4637b202bb"
+  },
+  "research_question": "At fixed synthetic acquisition budgets, what fraction of fixed-pick membership decisions do canonical policies certify, and how much of that budget do they use?",
+  "schema_version": 1,
+  "scope": "Existing synthetic cases only; no new human data, assumed response distribution, budget-optimality claim, or estimate of recruiter workload.",
+  "selection": {
+    "expected_constructed": 128,
+    "expected_factorial": 1024,
+    "expected_instances": 1152,
+    "expected_phase_and_cost": {
+      "constructed_heterogeneous": 64,
+      "constructed_unit": 64,
+      "factorial_heterogeneous": 512,
+      "factorial_unit": 512
+    },
+    "rule": "Exactly benchmark_extensions.selected_instances(computational_design): all factorial nonanswer_probability==0 records and all constructed positive_multilabel/coverage_negative records; no filtering by outcomes, initial certificates, or policy performance."
+  },
+  "status": "Internal design amendment fixed before computing budgeted outcomes; not a preregistration.",
+  "tie_slots": 4,
+  "ties": "Reuse original stable_seed(original seed, tie, instance ID, replicate). Allen cached DNF is deterministic and has four identical slots, not four independent replicates.",
+  "verification": {
+    "checks": [
+      "Protected old inputs unchanged before and after run",
+      "All full public-runner traces reproduce existing per-slot acquisition query counts and costs",
+      "Every case and tie slot retained in each budget row",
+      "Zero budget yields exactly initial certificates (selected costs strictly positive)",
+      "Full budget yields the original final verdict for all cases and methods",
+      "Certification and paid costs are nondecreasing as budget increases",
+      "No charged cost exceeds its exact Fraction budget",
+      "All recorded certificates use only revealed answers, classify to the reported verdict, and cost no more than acquisition",
+      "Every prefix agrees with direct runner calls for all methods, slots, and budgets on the deterministic verification subset",
+      "No duplicate physical acquisition; all selected binary answers agree with the acquired guarded record",
+      "Cached DNF rejects a nonanswer explicitly rather than silently treating it as a binary label"
+    ],
+    "direct_subset": "For each of the four phase-by-cost strata, sort instance IDs by SHA256(UTF-8 ID), breaking ties lexicographically, and select the first four. This rule is frozen without viewing budget outcomes.",
+    "expected_direct_cases": 16,
+    "expected_direct_runs": 2688
+  }
+}

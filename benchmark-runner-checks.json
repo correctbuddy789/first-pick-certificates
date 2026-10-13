@@ -1,0 +1,27 @@
+{
+  "equivalence": {
+    "all_outcomes_certified": true,
+    "cases": 1152,
+    "full_original_traces_matched": 560,
+    "original_dnf_virtual_ledgers_matched": 80,
+    "protected_extension_sha256": {
+      "benchmark_extensions.py": "0596297c1a6cd83436d823e8813b129047e0addf94c5c33edc8eca4a09ecae30",
+      "dnf_baselines.py": "600d22fafd3233fa5a4d8d79090c1981060b411feeabb07f99b1ed8811b3a2e6",
+      "extension-design.json": "2b82686ad26d44cc2c3fc1462cf04434e881145df11065a10e209b4aac61f052",
+      "extension-results.csv": "5cde7b3d8ce1bd96e6279586877c1d99ddfbe3354cdcf8ce5f660a2603b85e37",
+      "extension-results.json": "8218bab7d14fd8905cef59ce8368b9c58052a2f0e80e4065b5bd47d0f8ad9c4b",
+      "verify_dnf_baselines.py": "4317e31be487f8fc19a5538f6f457b1506f97a345db381b6783d12a5f4a657e4"
+    },
+    "rows": 32256,
+    "stored_non_timing_scalar_fields_matched": 870912,
+    "trace_subset_rule": "every 64th case plus phase endpoints; all methods and four tie slots",
+    "traces_sha256": "1a9518daf0877eddf314f0a2c2972fc8aeceed1d40ab0595e9e570a15adf3292"
+  },
+  "sources": {
+    "benchmark_runner.py": "40aceeeac8d7e793da506f777d59adbcd63bd54a53049a9b26c2df2c202f2b1a",
+    "policy_runner.py": "619952e58238709414b219f008ef2049ee9c91cba117db08dec184902e2e8664",
+    "verify_benchmark_runner.py": "1b969cefbf49d95ddaa7c484c981b3c8a82128611905074c0aa8e6fd1cb8d079"
+  },
+  "status": "passed",
+  "targeted_tests": 7
+}

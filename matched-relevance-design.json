@@ -1,0 +1,82 @@
+{
+  "fixed_utc": "2026-10-13T13:16:59.468434+00:00",
+  "policies": {
+    "active_filter": "Available unknown non-pick candidates occurring in at least one judge blocker set having no known eligible blocker.",
+    "costs": "Original candidate costs unchanged. No timing comparisons or population significance tests.",
+    "exact_filter": "Available unknown candidates returned by the original MaskContext exact-relevance algorithm.",
+    "filters": [
+      "active",
+      "exact"
+    ],
+    "pick_first": "All six variants choose the pick first if it is available.",
+    "priorities": [
+      "uniform",
+      "cheapest",
+      "max_incidence"
+    ],
+    "priority": "After the common pick-first rule, select uniformly, minimum fixed acquisition cost, or maximum incidence among currently unblocked judges; vary only filter within each paired priority.",
+    "randomization": "Four original stable_seed(original_seed, tie, instance_id, replicate) seeds; reinitialize Random(seed) for every policy. Fresh uniform choice from sorted tied set at every step, including singleton sets. Common random numbers do not imply identical choices after trajectories diverge."
+  },
+  "protected_inputs": {
+    "benchmark_extensions.py": "0596297c1a6cd83436d823e8813b129047e0addf94c5c33edc8eca4a09ecae30",
+    "certificates.py": "df49733a4764ba7e788e0aadb4e6ec376bcdb7d7b3f79489f111d8fee2796594",
+    "computational-results.csv": "17bfd6495b348f926d8b8e308684f2abe6653bc0e081941d7880ba2df1c6726c",
+    "computational-results.json": "01a659bb6d0b3171f4c7f04ce8e94ede6ba2a706bbb4c231a870d04cc7ca7b8e",
+    "computational_design.json": "59ee3372073974d78f1a115c6b247696fef9992eb1fd57b327c02b773b76018d",
+    "computational_study.py": "ff15e5bfad57f4e60498bd351f8a5b2be8f361ea011e0590fa7869d4c9eb48f8",
+    "dnf_baselines.py": "600d22fafd3233fa5a4d8d79090c1981060b411feeabb07f99b1ed8811b3a2e6",
+    "extension-design.json": "2b82686ad26d44cc2c3fc1462cf04434e881145df11065a10e209b4aac61f052",
+    "extension-results.csv": "5cde7b3d8ce1bd96e6279586877c1d99ddfbe3354cdcf8ce5f660a2603b85e37",
+    "extension-results.json": "8218bab7d14fd8905cef59ce8368b9c58052a2f0e80e4065b5bd47d0f8ad9c4b",
+    "query_policies.py": "a537dbe1575b52ce3b4eb2c86dcedd5e7ee187a65078ef9fcfa60e4637b202bb"
+  },
+  "purpose": "Isolate exact relevance filtering from pick-first, cost preference and random tie rules on all existing synthetic cases; separately explain previously reported descriptive policy reversals.",
+  "required_outputs": [
+    "Per-instance/replicate/filter/priority query, cost, nonanswer and outcome rows",
+    "Paired per-instance means with cheaper/equal/dearer counts and phase/cost/family strata",
+    "Meaningful reachable state frequencies with explicit denominators",
+    "Exact equality of active uniform and max-incidence traces to original corresponding benchmark aggregates",
+    "All protected inputs unchanged"
+  ],
+  "retention": {
+    "constructed": 256,
+    "factorial": 2048,
+    "include": "All original instances, including initial certificates and final unresolved cases; no outcome or performance selection.",
+    "instances": 2304
+  },
+  "schema_version": 1,
+  "state_diagnostics": {
+    "choice_effect": "Record whether exact filtering changes the available best-priority set.",
+    "frequency": "Report strict exact subset of active set as state visits, distinct (instance, known_positive, known_negative, available) states pooled across six variants/four seeds, and affected instances. Duplicate visited states/replicate slots are not independent observations.",
+    "independent_check": "At each visited state compare mask relevance to the independently implemented absorbed-DNF relevance result; hand-check a constructed absorption example with explicit world enumeration.",
+    "meaningful": "Before a query, original terminal checks permit acquisition and the pick is not available, so the filter can affect a choice."
+  },
+  "status": "Internal design amendment frozen after seeing earlier aggregate results and reviewer requests, before running these matched policies. Not preregistration.",
+  "stored_result_analysis": {
+    "interpretation": "Unadjusted, overlapping descriptive strata of a fixed synthetic design, with shared latent draws. No p-values, population uncertainty, causal claims, or performance-driven changes to the main benchmark.",
+    "main_comparison": "Allen cached round robin minus cheapest relevance on all 512 heterogeneous factorial cases, averaging each policy over its four stored tie slots.",
+    "reversal_comparison": "Allen cached round robin minus pick-first maximum blockers on the 32 constructed unit-cost coverage-negative cases.",
+    "status": "Posthoc descriptive analysis of existing extension results; factors and representative selection specified here before generating this report, not before original results were observed.",
+    "strata": [
+      "judges",
+      "candidates",
+      "expected_blockers",
+      "overlap",
+      "known_probability",
+      "eligibility_probability",
+      "quorum_name",
+      "outcome",
+      "initially_ambiguous",
+      "absorbed_term_bin"
+    ],
+    "term_bins": [
+      "0",
+      "1",
+      "2-4",
+      "5-16",
+      "17+"
+    ],
+    "trace_selection": "Within each stated group, choose lexicographically smallest case whose per-case mean difference has the requested sign; choose lowest replicate index whose paired difference has that sign. Include one Allen-cheaper and one Allen-dearer factorial heterogeneous case and one Allen-dearer unit coverage-negative case."
+  },
+  "terminal_contract": "Original classify/can_certify_with stopping; each query paid once; None consumes full cost and remains logically unknown; retain all initial labels and unknown universe."
+}

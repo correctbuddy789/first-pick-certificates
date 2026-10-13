@@ -1,5 +1,12 @@
 # Reuse the toolkit with complete panel orders
 
+For a direct comparison with all seven published acquisition policies,
+including the cached DNF comparator, use the shared batch workflow in
+[BENCHMARK.md](BENCHMARK.md). It accepts this same input format and
+`choose(state)` plug-ins, and also runs the 1,152 published binary-answer
+benchmark cases. The simple workflow below retains its existing deterministic
+adapters and affordable-query budget behavior.
+
 An evaluation researcher can use this workflow to compare eligibility-query
 policies after collecting complete preference tiers for a fixed candidate
 pool. The question is specific: **does the system's fixed first pick belong

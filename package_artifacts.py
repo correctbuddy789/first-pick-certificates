@@ -36,6 +36,28 @@ PAYLOAD_FILES = (
     "MAINTENANCE.md",
     "USAGE.md",
     "REUSE.md",
+    "BENCHMARK.md",
+    "benchmark_runner.py",
+    "verify_benchmark_runner.py",
+    "benchmark-runner-checks.json",
+    "policy_explanation.py",
+    "policy-explanation.json",
+    "policy-explanation.csv",
+    "policy-explanation.md",
+    "matched-relevance-design.json",
+    "matched-relevance-design.md",
+    "matched-relevance-results.json",
+    "matched-relevance-results.csv",
+    "matched-relevance-results.md",
+    "BUDGET.md",
+    "budget_study.py",
+    "budget_design.json",
+    "budget-design.md",
+    "budget-results.json",
+    "budget-results.csv",
+    "budget-checks.json",
+    "figures/budgeted-acquisition.pdf",
+    "figures/budgeted-acquisition.png",
     "panel_io.py",
     "policy_runner.py",
     "reuse_demo.py",
@@ -263,6 +285,21 @@ def verify_archive(path, payload):
             if reuse_checks.get("passed") is not True:
                 raise ValueError("Fresh-extraction reuse checks failed")
             verified["verify_reuse.py"] = reuse_checks
+            for script, args in (
+                ("verify_benchmark_runner.py", []),
+                ("policy_explanation.py", ["--verify-stored"]),
+                ("budget_study.py", ["--verify-stored"]),
+            ):
+                subprocess.run([sys.executable, "-E", "-S", script, *args],
+                               cwd=root, check=True, capture_output=True, text=True)
+                verified[script] = "PASS: independent interface or stored-output checks"
+            runner_record = json.loads((root / "benchmark-runner-checks.json").read_text())
+            for name, digest in runner_record["sources"].items():
+                if sha256((root / name).read_bytes()) != digest:
+                    raise ValueError(f"Shared-runner source changed after full check: {name}")
+            for name, digest in runner_record["equivalence"]["protected_extension_sha256"].items():
+                if sha256((root / name).read_bytes()) != digest:
+                    raise ValueError(f"Protected comparator file changed: {name}")
     return verified
 
 
@@ -282,8 +319,8 @@ def main():
         "version": (HERE / "VERSION").read_text().strip(),
         "title": TITLE,
         "archive": ARCHIVE,
-        "scope": "Standalone certificate operations, tier-file and policy interface, synthetic reuse application, original and extended acquisition benchmarks, independent verification, aggregate empirical outputs, and figure generation",
-        "resource_url": "https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.0.0",
+        "scope": "Standalone certificate operations, tier-file and policy interface, synthetic reuse application, original and extended acquisition benchmarks, matched filtering, budgeted acquisition, independent verification, aggregate empirical outputs, and figure generation",
+        "resource_url": "https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v" + (HERE / "VERSION").read_text().strip(),
         "licensing": "MIT for code; CC BY 4.0 for documentation, synthetic inputs/outputs, figures and publishable aggregates; see LICENSING.md",
         "tested_python": platform.python_version(),
         "core_dependencies": "Python standard library",

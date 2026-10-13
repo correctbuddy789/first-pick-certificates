@@ -2,7 +2,7 @@
 
 Tushar Nain · Grapevine · October 2026
 
-Version 1.0.0: [versioned resource and download](https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.0.0).
+Version 1.1.0: [versioned resource and download](https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.1.0).
 Code: MIT. Documentation, synthetic examples/results, figures, and publishable
 aggregates: CC BY 4.0. See [LICENSING.md](LICENSING.md), [CITATION.cff](CITATION.cff),
 and [MAINTENANCE.md](MAINTENANCE.md) for attribution, scope, and upkeep.
@@ -22,6 +22,12 @@ explicit unresolved result. [REUSE.md](REUSE.md) documents JSON/CSV schema 1.0,
 the custom-policy callback, and a fully synthetic learning-resource example.
 No new human judgments, model calls, or private records are needed.
 
+For research comparisons, [BENCHMARK.md](BENCHMARK.md) runs the same policy
+callback on imported panels and all 1,152 binary benchmark cases, including
+the cached DNF baseline and custom plug-ins. [BUDGET.md](BUDGET.md) describes
+the fixed budget study. [matched-relevance-results.md](matched-relevance-results.md)
+separates exact filtering's incremental effect from query priority.
+
 ## What can be reproduced
 
 | Component | Files | Requires private records? |
@@ -34,6 +40,9 @@ No new human judgments, model calls, or private records are needed.
 | Established DNF acquisition and cost-normalized blockers on 1,152 binary-answer cases | `dnf_baselines.py`, `benchmark_extensions.py`, `extension-design.json/md`, `extension-results.json/csv` | No |
 | Additional independent comparator checks | `verify_dnf_baselines.py`, `extension-checks.json` | No |
 | JSON/CSV tier import, policy callback, and synthetic recommendation workflow | `panel_io.py`, `policy_runner.py`, `reuse_demo.py`, `REUSE.md`, `examples/` | No |
+| Common benchmark/imported-panel runner and complete equivalence record | `benchmark_runner.py`, `verify_benchmark_runner.py`, `benchmark-runner-checks.json`, `BENCHMARK.md` | No |
+| Matched filtering and descriptive policy mechanisms | `policy_explanation.py`, `policy-explanation.*`, `matched-relevance-*` | No |
+| Six-budget acquisition comparison and figure | `budget_study.py`, `budget_design.json`, `budget-design.md`, `budget-results.json/csv`, `budget-checks.json`, `BUDGET.md` | No |
 | Complete-tier oracle and public workflow checks | `verify_reuse.py` | No |
 | Historical audit outputs and reference-rule sensitivity | `public-aggregate-results.json`, `stress-results.json`, `target-sensitivity.json` | Aggregate outputs are included; rerunning the historical analysis requires private records |
 | Manuscript figure | `make_figures.py`, `figures/` | No |
@@ -74,6 +83,9 @@ python3 computational_study.py --verify-only --checks-out computational-checks-r
 python3 -S verify_dnf_baselines.py --out extension-checks-rerun.json
 python3 -S benchmark_extensions.py --verify-stored
 python3 -S verify_reuse.py --out reuse-verification-rerun.json
+python3 -S verify_benchmark_runner.py
+python3 -S policy_explanation.py --verify-stored
+python3 -S budget_study.py --verify-stored
 ```
 
 The first verifier compares bounds, stopping, and certificate optima with
@@ -134,15 +146,41 @@ The JSON supplies all paired comparisons, denominators, and timing components.
 `--verify-stored` checks stored artifacts and the original-policy totals;
 `--run` actually recomputes the new policies. Machine timings vary between runs.
 
-## Regenerate the figure
+## Test filtering and limited budgets
+
+The matched amendment pairs active blockers with exact relevance at each of
+three priorities, holding pick-first selection and tie rules fixed. It uses
+all 2,304 original cases, including initial certificates and unresolved
+nonanswers, for 55,296 traces. Read `matched-relevance-design.md` and the
+results report before interpreting the incremental gains. The separate
+`policy-explanation.md` is explicitly posthoc; its three traces are selected
+by a documented lexicographic rule, not claimed to be typical cases.
+
+```bash
+python3 -S policy_explanation.py --explain --matched
+python3 -S budget_study.py --run
+```
+
+The budget study uses all 1,152 binary-answer cases and the six internally
+frozen caps: 0, 1/16, 1/8, 1/4, 1/2, and 1 of initial available query cost.
+It measures truncation of the canonical policies, stopping before the next
+unaffordable prescribed query. It does not optimize query priorities for
+budgeted success. All 164 initially certified cases remain in the primary
+denominator. Unresolved budget stops are not negative verdicts. The raw
+193,536 budget rows include all seven policies and four original tie slots.
+See `BUDGET.md` for direct-run checks, cost normalization, and interpretation.
+The original experiments remain byte-for-byte unchanged.
+
+## Regenerate the figures
 
 ```bash
 python3 -m venv .venv
 .venv/bin/python -m pip install matplotlib
 .venv/bin/python make_figures.py
+.venv/bin/python budget_study.py --figures
 ```
 
-Both panels are computed from the included JSON outputs. The PDF and PNG
+All panels are computed from the included JSON outputs. The PDF and PNG
 are written under `figures/`.
 
 ## Verify and rebuild this archive
@@ -153,7 +191,8 @@ python3 package_artifacts.py
 
 The packager allowlists every file, checks manifest hashes, extracts the
 archive into a fresh temporary directory, and runs the method, policy,
-computational, comparator, and reuse verifiers with third-party Python
+computational, comparator, reuse, shared-runner, matched-result, and budget
+verifiers with third-party Python
 imports disabled. It needs
 no private inputs when run from an extracted package. Repacking does
 not rerun the full timing experiment.

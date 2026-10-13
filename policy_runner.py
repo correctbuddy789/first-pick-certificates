@@ -97,14 +97,23 @@ def _core_costs(costs):
 
 
 def run_policy(panel: Panel, choose, answer, *, policy_name="custom",
-               max_attempts=None, max_cost=None):
+               max_attempts=None, max_cost=None, budget_mode="affordable"):
     """Run a fixed panel audit with external selection and answer callbacks.
 
-    ``choose(PolicyState) -> int`` selects an available affordable index.
+    ``choose(PolicyState) -> int`` selects an available integer index.
     ``answer(candidate_id) -> 0 | 1 | None`` supplies the acquired response.
     Any nonanswer still consumes one attempt and its complete stated cost.
     Budgets are optional user-imposed stops, not the benchmark's logical
     terminal rule. No selected query can exceed either supplied budget.
+
+    By default (``budget_mode="affordable"``), the selector must choose an
+    affordable query. In ``"prefix"`` mode the selector may prescribe any
+    available query: an unaffordable next query stops the run BEFORE answer
+    access or payment, with ``next_query_exceeds_cost_budget``. Canonical
+    benchmark policies ignore budgets when choosing, so this truncates their
+    original sequence without silently skipping or replacing a query. The
+    state's affordable set remains accurate in both modes. A custom policy
+    can inspect budgets; prefix invariance then depends on its own behavior.
 
     The certificate minimizes additive cost among the REVEALED binary labels,
     relative to the initial labels. It cannot use unqueried response records.
@@ -114,6 +123,8 @@ def run_policy(panel: Panel, choose, answer, *, policy_name="custom",
         raise InputError("run_policy requires a Panel returned by load_panel/panel_from_dict")
     if max_attempts is not None and (type(max_attempts) is not int or max_attempts < 0):
         raise InputError("max_attempts: expected a nonnegative integer or None")
+    if budget_mode not in ("affordable", "prefix"):
+        raise InputError("budget_mode: expected 'affordable' or 'prefix'")
     budget = None if max_cost is None else cost_fraction(max_cost, "max_cost")
     p, n, available = set(panel.positive), set(panel.negative), set(panel.available)
     acquired_positive, acquired_negative = set(), set()
@@ -133,7 +144,7 @@ def run_policy(panel: Panel, choose, answer, *, policy_name="custom",
         relevant = context.relevant(p, n, available)
         remaining_cost = None if budget is None else budget - spent
         affordable = {c for c in available if remaining_cost is None or panel.costs[c] <= remaining_cost}
-        if not (affordable & relevant):
+        if budget_mode == "affordable" and not (affordable & relevant):
             reason = "cost_budget_exhausted"
             break
         state = PolicyState(panel.candidate_ids, panel.tiers, panel.pick,
@@ -143,7 +154,12 @@ def run_policy(panel: Panel, choose, answer, *, policy_name="custom",
                             None if max_attempts is None else max_attempts - len(trace),
                             remaining_cost)
         chosen = choose(state)
-        if type(chosen) is not int or chosen not in affordable:
+        if type(chosen) is not int or chosen not in available:
+            raise InputError("policy must return one currently available integer index")
+        if chosen not in affordable:
+            if budget_mode == "prefix":
+                reason = "next_query_exceeds_cost_budget"
+                break
             raise InputError("policy must return one currently available, affordable integer index")
         # No response is consulted before this point.
         response = answer(panel.candidate_ids[chosen])

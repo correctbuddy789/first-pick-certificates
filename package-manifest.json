@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
-  "version": "1.0.0",
+  "version": "1.1.0",
   "title": "When Can a Ranking Audit Stop? Certifying First Picks with Unresolved Eligibility",
   "archive": "reproducibility.zip",
-  "scope": "Standalone certificate operations, tier-file and policy interface, synthetic reuse application, original and extended acquisition benchmarks, independent verification, aggregate empirical outputs, and figure generation",
-  "resource_url": "https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.0.0",
+  "scope": "Standalone certificate operations, tier-file and policy interface, synthetic reuse application, original and extended acquisition benchmarks, matched filtering, budgeted acquisition, independent verification, aggregate empirical outputs, and figure generation",
+  "resource_url": "https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.1.0",
   "licensing": "MIT for code; CC BY 4.0 for documentation, synthetic inputs/outputs, figures and publishable aggregates; see LICENSING.md",
   "tested_python": "3.12.3",
   "core_dependencies": "Python standard library",
@@ -29,14 +29,24 @@
   "digest_scope": "All archive payload files except this manifest itself",
   "files": [
     {
+      "path": "BENCHMARK.md",
+      "bytes": 11091,
+      "sha256": "5d3a150c7eaeb88292eee948852a4708535a8e112ba3e74c2b65a961852cc1f2"
+    },
+    {
+      "path": "BUDGET.md",
+      "bytes": 10104,
+      "sha256": "373fc45e271b8d0a312f81ca623cc63afd4b239ec6253963da8c638a73abd454"
+    },
+    {
       "path": "CHANGELOG.md",
-      "bytes": 1116,
-      "sha256": "0ee7fa7712cf1ac04e9c9d6528c4bbf6c70da0c18d4eb467f7b50594ef9b3931"
+      "bytes": 2046,
+      "sha256": "e4d834143fd0bcf65d23eb0875bcf7635207cdcb0e4c3e7ec87b7458deadea02"
     },
     {
       "path": "CITATION.cff",
       "bytes": 891,
-      "sha256": "a876adc7a6f64eace6d3684ce617153deb78f6d14c4834339d6d67da64593975"
+      "sha256": "93030426e4249fd2ae591177d896fd045795ba32fb603712e783e9f4cab6c941"
     },
     {
       "path": "LICENSE-CC-BY-4.0.txt",
@@ -51,22 +61,22 @@
     {
       "path": "LICENSING.md",
       "bytes": 1496,
-      "sha256": "7cf9dcd92df1613a6fefcb8901d739002f31d28f4973c0c2176d33d9eb619df7"
+      "sha256": "a87895fbe4788e1b1fc7f82292f93590b8aa2cb2f034e1395533812a6401acba"
     },
     {
       "path": "MAINTENANCE.md",
       "bytes": 1455,
-      "sha256": "831af02e9765b147acaedd0023244c3d647d3e2e1fe8750f4351cb7237f966e7"
+      "sha256": "6f388236bce23c23b2e9f94a4fa24cd15a6c548c15adb27c46a112f489545580"
     },
     {
       "path": "README.md",
-      "bytes": 9867,
-      "sha256": "01436323e24dccb10ace79f23be5f404687eb9cc72c4024f9e762319e8542c63"
+      "bytes": 12269,
+      "sha256": "d5bed93ce97248ad225c661472b64a0378e80a279222756c1cfc8fb2485da6c6"
     },
     {
       "path": "REUSE.md",
-      "bytes": 12728,
-      "sha256": "c611f99ffbdf6b8f9d4965caea9c3921465570d08150459805cea019b78a15ad"
+      "bytes": 13137,
+      "sha256": "28e5e1b6f8c111d6133795d48d87f6dd7653ffdc3ed2e283e2a5a353e1e7fe93"
     },
     {
       "path": "USAGE.md",
@@ -76,12 +86,52 @@
     {
       "path": "VERSION",
       "bytes": 6,
-      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03"
+      "sha256": "1575e1af4a95f12f70b4ee6a6adce8160953d93ea17dc2611b90883ccc3ad3b8"
+    },
+    {
+      "path": "benchmark-runner-checks.json",
+      "bytes": 1419,
+      "sha256": "3598274a0ab61feaf8d4c5d4d294c147b3ef02dd0e0eaeddcef8aa0218f382fd"
     },
     {
       "path": "benchmark_extensions.py",
       "bytes": 15009,
       "sha256": "0596297c1a6cd83436d823e8813b129047e0addf94c5c33edc8eca4a09ecae30"
+    },
+    {
+      "path": "benchmark_runner.py",
+      "bytes": 17253,
+      "sha256": "40aceeeac8d7e793da506f777d59adbcd63bd54a53049a9b26c2df2c202f2b1a"
+    },
+    {
+      "path": "budget-checks.json",
+      "bytes": 1473,
+      "sha256": "4c30d9074d3d4d4fb3b6ffe558e191a6b55a4fd5bf081a40d27cf79f80addb06"
+    },
+    {
+      "path": "budget-design.md",
+      "bytes": 2096,
+      "sha256": "539ede30fc58bcc5461a672e11451a9e594ab7563a0cd96cadbeb8e431e0e8bf"
+    },
+    {
+      "path": "budget-results.csv",
+      "bytes": 19649548,
+      "sha256": "db693cffc1f0c3785a8b0d7a082dcb4b7c2a5b7eef3fd45fbbc6680d930be512"
+    },
+    {
+      "path": "budget-results.json",
+      "bytes": 693330,
+      "sha256": "5213ba285441858bf5a933e100c0bf2c62123eb043b24145e713174f171e7991"
+    },
+    {
+      "path": "budget_design.json",
+      "bytes": 7885,
+      "sha256": "046bcddb916cf27d6b0e28e97d93de43f60ede9fd7b4001d03024a295ddce549"
+    },
+    {
+      "path": "budget_study.py",
+      "bytes": 24340,
+      "sha256": "94be28d16a79351231466e031c0fc194bb151ff543d68bd5a3407e8c3abf9003"
     },
     {
       "path": "certificates.py",
@@ -199,6 +249,16 @@
       "sha256": "8218bab7d14fd8905cef59ce8368b9c58052a2f0e80e4065b5bd47d0f8ad9c4b"
     },
     {
+      "path": "figures/budgeted-acquisition.pdf",
+      "bytes": 29539,
+      "sha256": "f9cf1ca7c90b8734bbb7a67c5c4340def609d7849eeafeedd984e493ecb72690"
+    },
+    {
+      "path": "figures/budgeted-acquisition.png",
+      "bytes": 179771,
+      "sha256": "83c973ea000bcfbce633e8ffa9512a260e25fc92a14829076c49dda80762a029"
+    },
+    {
       "path": "figures/certification-and-queries.pdf",
       "bytes": 24545,
       "sha256": "e94c3428c7fa3827a54bdb9b9b059fd9b2a7e97369e8b8683ffbb649f9530a49"
@@ -214,9 +274,34 @@
       "sha256": "8687300908e97cb8925d0296c58b59c48031509a20f1a3a5308495f567f06a82"
     },
     {
+      "path": "matched-relevance-design.json",
+      "bytes": 5761,
+      "sha256": "0e125a20f3bfa1445b7731e24bd7b77bd47b23d6b5c81bcca2f880d68388e01d"
+    },
+    {
+      "path": "matched-relevance-design.md",
+      "bytes": 1690,
+      "sha256": "038bfc07a1b7fc770f2136c188b56abd0b6796b659fa5d97bc2ffdb4496a4df8"
+    },
+    {
+      "path": "matched-relevance-results.csv",
+      "bytes": 6657331,
+      "sha256": "7ecbbc0cf434d219cd3bdd22db7f9a17ba4703fbdd31cc883f3570a0786bf456"
+    },
+    {
+      "path": "matched-relevance-results.json",
+      "bytes": 465463,
+      "sha256": "80497b2b4f710753837b4cf2fc3b97ccddf079d86420836d2f05949c48fdda1d"
+    },
+    {
+      "path": "matched-relevance-results.md",
+      "bytes": 5375,
+      "sha256": "f40425d83b608d379e901458f04b33de674fdffc3f5b5e6c7de818e6d4ad26aa"
+    },
+    {
       "path": "package_artifacts.py",
-      "bytes": 13406,
-      "sha256": "08761e388fe5dfa9ffe47e5cd56d58fdc8332e796e2eb27ca996e9304220d40d"
+      "bytes": 15190,
+      "sha256": "c3bdc57d5da50da5b12d03c42ffbadd6cf4ea7a9142b266b40694e0d4b4200bc"
     },
     {
       "path": "panel_io.py",
@@ -224,14 +309,34 @@
       "sha256": "6431c642d745f7f2ff707f8e781f4dea80f746c3e6e3ffd10be8120a40d50a8e"
     },
     {
+      "path": "policy-explanation.csv",
+      "bytes": 141386,
+      "sha256": "0c9c416c00048280c84c4ce8e00b23deb6464db23a80c190d23ef720a40d47d9"
+    },
+    {
+      "path": "policy-explanation.json",
+      "bytes": 42474,
+      "sha256": "f0d1ad1b6c0b1f4c48acc00c77f0ac409ffe807efa4e7659babb44d82151d927"
+    },
+    {
+      "path": "policy-explanation.md",
+      "bytes": 5671,
+      "sha256": "601c7edcb8884dfc756d70e493bf4e7228001f921654f45366f73db35895951c"
+    },
+    {
       "path": "policy-verification.json",
       "bytes": 1877,
       "sha256": "6ba5c7ebe9d0d54d16e5cd19c71b91e5b0475d1b3dee54bc1cdffdb3a5817c39"
     },
     {
+      "path": "policy_explanation.py",
+      "bytes": 28502,
+      "sha256": "22042f8d768c24009e63d9909e08ccc24d534ff3309195403e57756bc40625d5"
+    },
+    {
       "path": "policy_runner.py",
-      "bytes": 9285,
-      "sha256": "0dd673a89d2607dda056542f0e23eac6560b6ebfca40c9e822a2ef38743e196c"
+      "bytes": 10315,
+      "sha256": "619952e58238709414b219f008ef2049ee9c91cba117db08dec184902e2e8664"
     },
     {
       "path": "public-aggregate-results.json",
@@ -262,6 +367,11 @@
       "path": "verification.json",
       "bytes": 1487,
       "sha256": "1230b9fcdc5d3bf948b581fd1e60caa56ed0c21664703dc87d5014723972a148"
+    },
+    {
+      "path": "verify_benchmark_runner.py",
+      "bytes": 15404,
+      "sha256": "1b969cefbf49d95ddaa7c484c981b3c8a82128611905074c0aa8e6fd1cb8d079"
     },
     {
       "path": "verify_dnf_baselines.py",

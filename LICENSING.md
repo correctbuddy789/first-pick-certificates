@@ -15,8 +15,8 @@ their own terms. External papers and linked resources retain their
 respective terms; linking or citing them does not relicense their content.
 
 For content attribution, identify Tushar Nain, *First-Pick Certificates:
-Ranking Audits with Unresolved Eligibility*, version 1.0.0, and the
-[versioned release](https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.0.0).
+Ranking Audits with Unresolved Eligibility*, version 1.1.0, and the
+[versioned release](https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.1.0).
 Retain applicable license notices and indicate modifications as required
 by the relevant license. `CITATION.cff` supplies machine-readable metadata.
 
