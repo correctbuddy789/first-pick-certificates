@@ -1,0 +1,292 @@
+{
+  "schema_version": 3,
+  "version": "1.0.0",
+  "title": "When Can a Ranking Audit Stop? Certifying First Picks with Unresolved Eligibility",
+  "archive": "reproducibility.zip",
+  "scope": "Standalone certificate operations, tier-file and policy interface, synthetic reuse application, original and extended acquisition benchmarks, independent verification, aggregate empirical outputs, and figure generation",
+  "resource_url": "https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.0.0",
+  "licensing": "MIT for code; CC BY 4.0 for documentation, synthetic inputs/outputs, figures and publishable aggregates; see LICENSING.md",
+  "tested_python": "3.12.3",
+  "core_dependencies": "Python standard library",
+  "optional_figure_dependency": "matplotlib",
+  "empirical_replay_standalone": false,
+  "restricted_replay_inputs_not_included": [
+    "pilot/data/export-20260826.json",
+    "pilot/data/den_ranks.json",
+    "pilot/data/bm25_ranks.json"
+  ],
+  "restricted_replay_modules_not_included": [
+    "paper/decision-certificates/analyze_certificates.py",
+    "paper/decision-certificates/stress_analysis.py",
+    "paper/decision-certificates/analyze_target_sensitivity.py",
+    "pilot/scripts/analyze.py",
+    "pilot/scripts/sensitivity.py"
+  ],
+  "recorded_input_sha256": {
+    "pilot/data/export-20260826.json": "ee4c4088186ca327a0baf1433ff1f4276fd81d39a954f767d56edd453d8b9c4e",
+    "pilot/data/den_ranks.json": "1ca8400ebc6a782654213bdf12110965aa04961d7885c552b8b536f4306fe4c8"
+  },
+  "digest_scope": "All archive payload files except this manifest itself",
+  "files": [
+    {
+      "path": "CHANGELOG.md",
+      "bytes": 1116,
+      "sha256": "0ee7fa7712cf1ac04e9c9d6528c4bbf6c70da0c18d4eb467f7b50594ef9b3931"
+    },
+    {
+      "path": "CITATION.cff",
+      "bytes": 891,
+      "sha256": "a876adc7a6f64eace6d3684ce617153deb78f6d14c4834339d6d67da64593975"
+    },
+    {
+      "path": "LICENSE-CC-BY-4.0.txt",
+      "bytes": 18657,
+      "sha256": "9ba9550ad48438d0836ddab3da480b3b69ffa0aac7b7878b5a0039e7ab429411"
+    },
+    {
+      "path": "LICENSE-MIT.txt",
+      "bytes": 1068,
+      "sha256": "81a2de736c4ebf0846d2a5d99a84a51d5863cb78387ed1a109c1e31b0c665782"
+    },
+    {
+      "path": "LICENSING.md",
+      "bytes": 1496,
+      "sha256": "7cf9dcd92df1613a6fefcb8901d739002f31d28f4973c0c2176d33d9eb619df7"
+    },
+    {
+      "path": "MAINTENANCE.md",
+      "bytes": 1455,
+      "sha256": "831af02e9765b147acaedd0023244c3d647d3e2e1fe8750f4351cb7237f966e7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 9867,
+      "sha256": "01436323e24dccb10ace79f23be5f404687eb9cc72c4024f9e762319e8542c63"
+    },
+    {
+      "path": "REUSE.md",
+      "bytes": 12728,
+      "sha256": "c611f99ffbdf6b8f9d4965caea9c3921465570d08150459805cea019b78a15ad"
+    },
+    {
+      "path": "USAGE.md",
+      "bytes": 3891,
+      "sha256": "95d674560c5ece5db77563accd8f9ce72e43ddc2b886ae18b5d8201bf3e329c2"
+    },
+    {
+      "path": "VERSION",
+      "bytes": 6,
+      "sha256": "59854984853104df5c353e2f681a15fc7924742f9a2e468c29af248dce45ce03"
+    },
+    {
+      "path": "benchmark_extensions.py",
+      "bytes": 15009,
+      "sha256": "0596297c1a6cd83436d823e8813b129047e0addf94c5c33edc8eca4a09ecae30"
+    },
+    {
+      "path": "certificates.py",
+      "bytes": 12986,
+      "sha256": "df49733a4764ba7e788e0aadb4e6ec376bcdb7d7b3f79489f111d8fee2796594"
+    },
+    {
+      "path": "computational-checks.json",
+      "bytes": 1536,
+      "sha256": "429ffef5d85cfa12ce43c82dd6eaa54ba4eb9f09d9e9ffe1ad7aa5ffce329de9"
+    },
+    {
+      "path": "computational-design.md",
+      "bytes": 5457,
+      "sha256": "293bc10b261c4cee0f8ba87d70a7f5f9f4dc98254f7803d2c397785a3719944a"
+    },
+    {
+      "path": "computational-results.csv",
+      "bytes": 1733281,
+      "sha256": "17bfd6495b348f926d8b8e308684f2abe6653bc0e081941d7880ba2df1c6726c"
+    },
+    {
+      "path": "computational-results.json",
+      "bytes": 1064833,
+      "sha256": "01a659bb6d0b3171f4c7f04ce8e94ede6ba2a706bbb4c231a870d04cc7ca7b8e"
+    },
+    {
+      "path": "computational_design.json",
+      "bytes": 7069,
+      "sha256": "59ee3372073974d78f1a115c6b247696fef9992eb1fd57b327c02b773b76018d"
+    },
+    {
+      "path": "computational_study.py",
+      "bytes": 48591,
+      "sha256": "ff15e5bfad57f4e60498bd351f8a5b2be8f361ea011e0590fa7869d4c9eb48f8"
+    },
+    {
+      "path": "dnf_baselines.py",
+      "bytes": 9108,
+      "sha256": "600d22fafd3233fa5a4d8d79090c1981060b411feeabb07f99b1ed8811b3a2e6"
+    },
+    {
+      "path": "examples/cost_sensitive_policy.py",
+      "bytes": 934,
+      "sha256": "88bcfbb5224a1890d1df4892706dbb02ee31ddf36e0df13c777b21150e02156f"
+    },
+    {
+      "path": "examples/open_resources/expected-results.json",
+      "bytes": 28787,
+      "sha256": "f406a593bbd60326ce67f6f749d7c4dfc09408235796f52485249158f7b39d5e"
+    },
+    {
+      "path": "examples/open_resources/panel-csv.json",
+      "bytes": 755,
+      "sha256": "f9787887af6f96613b7a0439f665b814fea4feea9e8e8c203f03c7f1f0a7b75c"
+    },
+    {
+      "path": "examples/open_resources/panel-unavailable.json",
+      "bytes": 657,
+      "sha256": "1913b89e3aae46f03120fcaa56e9be04659df77e07f33250c6c9daa80d141976"
+    },
+    {
+      "path": "examples/open_resources/panel.json",
+      "bytes": 1076,
+      "sha256": "ab79c15510385f5e84d66cdde31c06341e9d2a9c2de90698ff5ec23fc13df60c"
+    },
+    {
+      "path": "examples/open_resources/responses-negative.json",
+      "bytes": 104,
+      "sha256": "13d4595d253c1a7b36f276a95903b6f0c593b7446b44ab13518cffa69c57815e"
+    },
+    {
+      "path": "examples/open_resources/responses-nonanswer.json",
+      "bytes": 107,
+      "sha256": "065cbaf8ab600c1c2c32565eec39120a762923f7d90dec44392a9ca055cce522"
+    },
+    {
+      "path": "examples/open_resources/responses-positive.json",
+      "bytes": 104,
+      "sha256": "694887c5d810f399353e212be443ca13bc7c3a13d753f6549ae6d65912440ab9"
+    },
+    {
+      "path": "examples/open_resources/responses-unavailable.json",
+      "bytes": 89,
+      "sha256": "f53442923ed75820a20e1ffe83bc7b5e10e7ee13b298be3044366d302721d9e6"
+    },
+    {
+      "path": "examples/open_resources/tiers.csv",
+      "bytes": 369,
+      "sha256": "ccf37b2e8d3c87144edfacac2d844fa9fdbfe08f666a6feb3b290d5a8fde3fb4"
+    },
+    {
+      "path": "extension-checks.json",
+      "bytes": 1117,
+      "sha256": "3785b8f230612772f9189902e702df17c3354981409b089333402e8518a14195"
+    },
+    {
+      "path": "extension-design.json",
+      "bytes": 6890,
+      "sha256": "2b82686ad26d44cc2c3fc1462cf04434e881145df11065a10e209b4aac61f052"
+    },
+    {
+      "path": "extension-design.md",
+      "bytes": 1898,
+      "sha256": "2eb3af9a7512a85d9abb702d8a2ac28b2592f2a5f2bcc2a134b25af2138f0541"
+    },
+    {
+      "path": "extension-results.csv",
+      "bytes": 4724966,
+      "sha256": "5cde7b3d8ce1bd96e6279586877c1d99ddfbe3354cdcf8ce5f660a2603b85e37"
+    },
+    {
+      "path": "extension-results.json",
+      "bytes": 176847,
+      "sha256": "8218bab7d14fd8905cef59ce8368b9c58052a2f0e80e4065b5bd47d0f8ad9c4b"
+    },
+    {
+      "path": "figures/certification-and-queries.pdf",
+      "bytes": 24545,
+      "sha256": "e94c3428c7fa3827a54bdb9b9b059fd9b2a7e97369e8b8683ffbb649f9530a49"
+    },
+    {
+      "path": "figures/certification-and-queries.png",
+      "bytes": 107062,
+      "sha256": "cbac1d7a688d14e9c7ba304c413be72c88eb992d28c8860a47a86bcd1965d826"
+    },
+    {
+      "path": "make_figures.py",
+      "bytes": 3166,
+      "sha256": "8687300908e97cb8925d0296c58b59c48031509a20f1a3a5308495f567f06a82"
+    },
+    {
+      "path": "package_artifacts.py",
+      "bytes": 13406,
+      "sha256": "08761e388fe5dfa9ffe47e5cd56d58fdc8332e796e2eb27ca996e9304220d40d"
+    },
+    {
+      "path": "panel_io.py",
+      "bytes": 13636,
+      "sha256": "6431c642d745f7f2ff707f8e781f4dea80f746c3e6e3ffd10be8120a40d50a8e"
+    },
+    {
+      "path": "policy-verification.json",
+      "bytes": 1877,
+      "sha256": "6ba5c7ebe9d0d54d16e5cd19c71b91e5b0475d1b3dee54bc1cdffdb3a5817c39"
+    },
+    {
+      "path": "policy_runner.py",
+      "bytes": 9285,
+      "sha256": "0dd673a89d2607dda056542f0e23eac6560b6ebfca40c9e822a2ef38743e196c"
+    },
+    {
+      "path": "public-aggregate-results.json",
+      "bytes": 10160,
+      "sha256": "19fdfee865c1881209a2c11b255799949ec1d80d7326e8a470870f17b54886f5"
+    },
+    {
+      "path": "query_policies.py",
+      "bytes": 13943,
+      "sha256": "a537dbe1575b52ce3b4eb2c86dcedd5e7ee187a65078ef9fcfa60e4637b202bb"
+    },
+    {
+      "path": "reuse_demo.py",
+      "bytes": 5116,
+      "sha256": "6e5f4820c6ca40c8123f50839f08e31d017577a3d6d0c10361855070b7dc019e"
+    },
+    {
+      "path": "stress-results.json",
+      "bytes": 7387,
+      "sha256": "060d5a20bf9b38ac22ae2b550030e55b67f346576564005fe6adafb8283e906b"
+    },
+    {
+      "path": "target-sensitivity.json",
+      "bytes": 102246,
+      "sha256": "bf0cc02d3fc9edcdd381fd5c3321edb2697577fca15459f4879e9910d4f919ef"
+    },
+    {
+      "path": "verification.json",
+      "bytes": 1487,
+      "sha256": "1230b9fcdc5d3bf948b581fd1e60caa56ed0c21664703dc87d5014723972a148"
+    },
+    {
+      "path": "verify_dnf_baselines.py",
+      "bytes": 11074,
+      "sha256": "4317e31be487f8fc19a5538f6f457b1506f97a345db381b6783d12a5f4a657e4"
+    },
+    {
+      "path": "verify_methods.py",
+      "bytes": 12680,
+      "sha256": "42b01d1223d17ccb2c17ebeb5f6f56bd17d4e4472927f7cce6252846999b6048"
+    },
+    {
+      "path": "verify_policies.py",
+      "bytes": 14470,
+      "sha256": "1aa7cae0962ed4c12f8c8d031c2fced462a38b50966151a0bd3e803ca6c7776c"
+    },
+    {
+      "path": "verify_reuse.py",
+      "bytes": 20867,
+      "sha256": "7fe3c2ec852ea55f0213f2567d259aba1865e21996c0bfd4882e9de382d28063"
+    },
+    {
+      "path": "walkthrough.py",
+      "bytes": 1870,
+      "sha256": "92e8c5373028bd13eb85b01130002b6e32af1333943c40c77e55f70ada60128b"
+    }
+  ]
+}

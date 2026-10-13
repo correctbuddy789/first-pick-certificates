@@ -1,0 +1,416 @@
+{
+  "analysis": "Exploratory secondary analysis; no new human judgments or model runs",
+  "target": "Membership of the fixed first pick in the mechanically defined majority top set; empty or no-majority sets have membership zero",
+  "release_scope": "Aggregate and per-requisition decision/count outputs only; no candidate indices, query traces, individual eligibility states, or raw judgments",
+  "summary": {
+    "requisitions": 10,
+    "candidate_pairs": 150,
+    "initial_unknown": 75,
+    "historical_binary_answers": 68,
+    "initial_certified": 5,
+    "final_certified": 9,
+    "retrospective_minimum_queries_for_certified": 4,
+    "all_completion_count": 4176,
+    "initial_mean_membership_bounds": [
+      0.2,
+      0.7
+    ],
+    "final_mean_membership_bounds": [
+      0.3,
+      0.4
+    ],
+    "random_order_expected_queries": 21.833333333333332,
+    "policy_queries": {
+      "pick_then_blockers": 10,
+      "candidate_order": 16
+    },
+    "policy_unresolved_answers": {
+      "pick_then_blockers": 2,
+      "candidate_order": 3
+    }
+  },
+  "rows": [
+    {
+      "requisition": "e1",
+      "n_candidates": 15,
+      "n_initial_unknown": 9,
+      "n_recorded_binary": 8,
+      "n_still_unresolved": 1,
+      "initial_possible_outcomes": [
+        0
+      ],
+      "final_possible_outcomes": [
+        0
+      ],
+      "certificate_size": 0,
+      "n_completions": 512,
+      "n_completion_hits": 0,
+      "random_order_expected_queries": 0.0,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        },
+        "candidate_order": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 0,
+      "tree_states": 1
+    },
+    {
+      "requisition": "e2",
+      "n_candidates": 15,
+      "n_initial_unknown": 6,
+      "n_recorded_binary": 6,
+      "n_still_unresolved": 0,
+      "initial_possible_outcomes": [
+        0
+      ],
+      "final_possible_outcomes": [
+        0
+      ],
+      "certificate_size": 0,
+      "n_completions": 64,
+      "n_completion_hits": 0,
+      "random_order_expected_queries": 0.0,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        },
+        "candidate_order": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 0,
+      "tree_states": 1
+    },
+    {
+      "requisition": "e3",
+      "n_candidates": 15,
+      "n_initial_unknown": 11,
+      "n_recorded_binary": 10,
+      "n_still_unresolved": 1,
+      "initial_possible_outcomes": [
+        0,
+        1
+      ],
+      "final_possible_outcomes": [
+        1
+      ],
+      "certificate_size": 1,
+      "n_completions": 2048,
+      "n_completion_hits": 1024,
+      "random_order_expected_queries": 6.0,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 1,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            1
+          ]
+        },
+        "candidate_order": {
+          "queries": 2,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            1
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 1,
+      "tree_states": 4608
+    },
+    {
+      "requisition": "e4",
+      "n_candidates": 15,
+      "n_initial_unknown": 9,
+      "n_recorded_binary": 8,
+      "n_still_unresolved": 1,
+      "initial_possible_outcomes": [
+        0,
+        1
+      ],
+      "final_possible_outcomes": [
+        0
+      ],
+      "certificate_size": 1,
+      "n_completions": 512,
+      "n_completion_hits": 32,
+      "random_order_expected_queries": 5.0,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 3,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        },
+        "candidate_order": {
+          "queries": 7,
+          "unresolved_answers": 1,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 4,
+      "tree_states": 2016
+    },
+    {
+      "requisition": "e5",
+      "n_candidates": 15,
+      "n_initial_unknown": 8,
+      "n_recorded_binary": 7,
+      "n_still_unresolved": 1,
+      "initial_possible_outcomes": [
+        1
+      ],
+      "final_possible_outcomes": [
+        1
+      ],
+      "certificate_size": 0,
+      "n_completions": 256,
+      "n_completion_hits": 256,
+      "random_order_expected_queries": 0.0,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            1
+          ]
+        },
+        "candidate_order": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            1
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 0,
+      "tree_states": 1
+    },
+    {
+      "requisition": "p1",
+      "n_candidates": 15,
+      "n_initial_unknown": 7,
+      "n_recorded_binary": 6,
+      "n_still_unresolved": 1,
+      "initial_possible_outcomes": [
+        0,
+        1
+      ],
+      "final_possible_outcomes": [
+        0,
+        1
+      ],
+      "certificate_size": null,
+      "n_completions": 128,
+      "n_completion_hits": 64,
+      "random_order_expected_queries": 4.0,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 1,
+          "unresolved_answers": 1,
+          "certified": false,
+          "possible_outcomes": [
+            0,
+            1
+          ]
+        },
+        "candidate_order": {
+          "queries": 3,
+          "unresolved_answers": 1,
+          "certified": false,
+          "possible_outcomes": [
+            0,
+            1
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 1,
+      "tree_states": 384
+    },
+    {
+      "requisition": "p2",
+      "n_candidates": 15,
+      "n_initial_unknown": 6,
+      "n_recorded_binary": 5,
+      "n_still_unresolved": 1,
+      "initial_possible_outcomes": [
+        1
+      ],
+      "final_possible_outcomes": [
+        1
+      ],
+      "certificate_size": 0,
+      "n_completions": 64,
+      "n_completion_hits": 64,
+      "random_order_expected_queries": 0.0,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            1
+          ]
+        },
+        "candidate_order": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            1
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 0,
+      "tree_states": 1
+    },
+    {
+      "requisition": "p3",
+      "n_candidates": 15,
+      "n_initial_unknown": 9,
+      "n_recorded_binary": 8,
+      "n_still_unresolved": 1,
+      "initial_possible_outcomes": [
+        0,
+        1
+      ],
+      "final_possible_outcomes": [
+        0
+      ],
+      "certificate_size": 1,
+      "n_completions": 512,
+      "n_completion_hits": 8,
+      "random_order_expected_queries": 3.3333333333333335,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 4,
+          "unresolved_answers": 1,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        },
+        "candidate_order": {
+          "queries": 3,
+          "unresolved_answers": 1,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 6,
+      "tree_states": 1052
+    },
+    {
+      "requisition": "p4",
+      "n_candidates": 15,
+      "n_initial_unknown": 6,
+      "n_recorded_binary": 6,
+      "n_still_unresolved": 0,
+      "initial_possible_outcomes": [
+        0,
+        1
+      ],
+      "final_possible_outcomes": [
+        0
+      ],
+      "certificate_size": 1,
+      "n_completions": 64,
+      "n_completion_hits": 32,
+      "random_order_expected_queries": 3.5,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 1,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        },
+        "candidate_order": {
+          "queries": 1,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 1,
+      "tree_states": 96
+    },
+    {
+      "requisition": "p5",
+      "n_candidates": 15,
+      "n_initial_unknown": 4,
+      "n_recorded_binary": 4,
+      "n_still_unresolved": 0,
+      "initial_possible_outcomes": [
+        0
+      ],
+      "final_possible_outcomes": [
+        0
+      ],
+      "certificate_size": 0,
+      "n_completions": 16,
+      "n_completion_hits": 0,
+      "random_order_expected_queries": 0.0,
+      "policies": {
+        "pick_then_blockers": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        },
+        "candidate_order": {
+          "queries": 0,
+          "unresolved_answers": 0,
+          "certified": true,
+          "possible_outcomes": [
+            0
+          ]
+        }
+      },
+      "optimal_binary_worst_case_queries": 0,
+      "tree_states": 1
+    }
+  ],
+  "input_sha256": {
+    "pilot/data/export-20260826.json": "ee4c4088186ca327a0baf1433ff1f4276fd81d39a954f767d56edd453d8b9c4e",
+    "pilot/data/den_ranks.json": "1ca8400ebc6a782654213bdf12110965aa04961d7885c552b8b536f4306fe4c8"
+  }
+}

@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this software or its public benchmarks, please cite this version."
+type: software
+title: "First-Pick Certificates: Ranking Audits with Unresolved Eligibility"
+authors:
+  - family-names: "Nain"
+    given-names: "Tushar"
+    affiliation: "Grapevine"
+version: "1.0.0"
+date-released: "2026-10-13"
+repository-code: "https://github.com/correctbuddy789/first-pick-certificates"
+url: "https://github.com/correctbuddy789/first-pick-certificates/releases/tag/v1.0.0"
+license:
+  - MIT
+  - CC-BY-4.0
+abstract: >-
+  Exact certificate operations, independent checks, synthetic acquisition
+  benchmarks, and a tier-file/policy interface for a fixed first pick's
+  membership in a panel quorum top set under unresolved eligibility.
+keywords:
+  - ranking evaluation
+  - eligibility uncertainty
+  - decision certificates
+  - information retrieval
+  - research software

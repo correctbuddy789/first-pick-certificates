@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "status": "fixed before policy evaluation; not a preregistration",
+  "fixed_utc": "2026-10-12 14:37:09 UTC",
+  "seed": 20261012,
+  "purpose": "Identify synthetic operating regimes for relevance pruning, nonanswers, and query costs; do not estimate human workload or population performance.",
+  "retention": "Keep every generated cell and replicate, including initially certified and finally unresolved instances. No outcome-based rejection or parameter tuning.",
+  "main_factorial": {
+    "judges": [4, 8],
+    "candidates": [12, 40],
+    "expected_blockers_per_judge": [2, 6],
+    "shared_incidence_probability": [0.0, 0.75],
+    "initial_known_probability": [0.0, 0.25],
+    "competitor_eligible_probability": [0.1, 0.4],
+    "pick_eligible_probability": 0.75,
+    "nonanswer_probability": [0.0, 0.3],
+    "cost_mode": ["unit", "heterogeneous"],
+    "heterogeneous_cost_values": [1, 4, 16],
+    "heterogeneous_cost_probabilities": [0.3333333333333333, 0.3333333333333333, 0.3333333333333333],
+    "quorum": ["strict_majority", "unanimity"],
+    "structural_replicates": 4,
+    "expected_instances": 2048,
+    "generator": "For each non-pick candidate draw a shared Bernoulli(d/(n-1)) bit. Independently for every judge, copy it with probability rho; otherwise draw a new Bernoulli(d/(n-1)) bit. This preserves marginal expected blocker count d and changes overlap. Pick index 0; blockers exclude pick. Draw independent uniforms for true eligibility, known labels, and nonanswers; draw each heterogeneous cost uniformly from {1,4,16}. Reuse these latent draws across knowledge, eligibility, nonanswer, cost, and quorum levels within a structural replicate. Tiers realize blockers above pick and all remaining candidates below it. Revealed initial labels are exact; a nonanswer leaves eligibility unrestricted."
+  },
+  "constructed_cases": {
+    "judges": [4, 8],
+    "candidates": 40,
+    "blockers_per_disjoint_judge_group": [2, 4],
+    "quorum": ["half", "strict_majority"],
+    "cost_mode": ["unit", "heterogeneous"],
+    "families": ["positive_multilabel", "coverage_negative", "unresolved_nonanswer", "bypassable_nonanswer"],
+    "structural_replicates": 4,
+    "expected_instances": 256,
+    "generator": "Pick is initially known eligible. Randomly assign disjoint groups of k candidates to judges. Positive: all blockers answer 0. Coverage negative: one blocker answers 1 in each of q=m-h+1 randomly ordered groups, all other blockers answer 0. Unresolved: q-1 groups each contain one answer 1, a further group contains one nonanswer, all other blockers answer 0. Bypassable: one group contains one nonanswer and all other blockers answer 0; h<=m-1 guarantees a positive certificate remains. Nonanswer latent truths are 0. Nonblocker truths are independent fair bits. Random candidate relabeling, judge order, within-group witness, and costs are fixed by seed, with no rejection."
+  },
+  "policy_comparison": {
+    "methods": ["uniform_all", "pick_first_max_blockers", "pick_first_uniform_blockers", "uniform_relevant", "cheapest_relevant"],
+    "random_tie_replicates": 4,
+    "randomization": "Choose uniformly afresh from the currently selectable set at every step. Reinitialize each method with the same per-instance/replicate random seed. This is distinct from integrating fixed priorities in the historical replay.",
+    "information": "Selection receives fixed blockers, quorum, initial labels, revealed answers, remaining queryable variables, and costs; it never receives the hidden record. Response is accessed only after the query is chosen.",
+    "termination": "All policies share exact certification and impossibility-of-future-certification stopping. Each candidate is queried at most once; nonanswers consume their full cost and remain unknown.",
+    "required_reports": ["all generated instances", "initially ambiguous instances", "certification and unresolved counts", "minimum observed certificate sizes and costs on certifiable instances only", "attempted queries and weighted costs", "nonanswer attempts and their costs", "paired policy differences", "factor and constructed-family summaries"]
+  },
+  "exact_online": {
+    "candidates": 6,
+    "judges": 4,
+    "blocker_probability": [0.25, 0.6],
+    "shared_incidence_probability": [0.0, 0.75],
+    "quorum": [2, 3],
+    "competitor_eligible_probability": [0.2, 0.6],
+    "pick_eligible_probability": 0.75,
+    "nonanswer_probability": [0.0, 0.25],
+    "cost_mode": ["unit", "heterogeneous"],
+    "structural_replicates": 2,
+    "expected_instances": 128,
+    "initial_known": "none",
+    "response_model": "Independent one-shot responses: P(None)=r, P(1)=(1-r)*p_c, P(0)=(1-r)*(1-p_c). A nonanswer reveals no eligibility information and cannot be retried. The independent probabilities and costs are known to the optimal policy; no full response record is generated or inspected by its recursion.",
+    "objective": "Minimize expected total query cost until certified or no remaining query can possibly certify. Exact Bellman recursion compares all unknown queryable candidates. Evaluate the five fixed policies exactly under fresh uniform ties on this same model.",
+    "offline_bound": "Separately enumerate all positive-probability ternary full records and their minimum-cost observed certificates. Report certification probability and mean hindsight bound conditional on certifiable records; unresolved records do not receive a zero-cost certificate. Report conditional online costs on that same event."
+  },
+  "runtime": {
+    "candidates": [8, 12, 16, 40, 150, 1000],
+    "judges": [4, 8],
+    "incidence": ["sparse_expected_3", "dense_probability_0.35"],
+    "shared_incidence_probability": [0.0, 0.75],
+    "quorum": "strict_majority",
+    "repetitions": 3,
+    "truth_table_max_candidates": 16,
+    "methods": ["judge_mask", "absorbed_quorum_dnf", "truth_table"],
+    "measurement": "Cold complete relevance computation, including context construction where applicable. Report medians and all raw repetitions. All candidates are initially unknown. Compare exact sets where multiple methods run. Never construct a candidate truth table above n=16. Exploratory single-environment timings, with Python/platform/CPU recorded."
+  },
+  "verification": {
+    "oracle": "Independently evaluate mechanical membership by realizing explicit tiers and finding each judge's highest eligible tier over all binary worlds. Derive uncertainty, relevance, and query-availability stopping from those worlds rather than certificate formulas.",
+    "complete_record_check": "For seeded small profiles at every quorum, enumerate every ternary response record, including nonanswers, and compare every policy's final outcome, allowed queries, charged cost, and stopping against the independent oracle. Compare observed minimum certificates against subset enumeration.",
+    "information_boundary_check": "A guarded response mapping raises if any policy tries to read an answer other than the just-selected query. Context construction receives a structure-only instance."
+  }
+}

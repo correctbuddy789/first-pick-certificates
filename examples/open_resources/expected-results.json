@@ -1,0 +1,1323 @@
+{
+  "csv_matches_json": true,
+  "description": "Wholly synthetic illustrative workflow; not measured external use or a new human study.",
+  "results": [
+    {
+      "certificate": {
+        "candidates": [
+          "handbook"
+        ],
+        "cost": 5,
+        "cost_exact": "5",
+        "labels": {
+          "handbook": 1
+        },
+        "relative_to_initial_labels": true,
+        "size": 1
+      },
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "glossary"
+      ],
+      "final_positive": [
+        "guide",
+        "handbook"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "max_blockers",
+      "possible_outcomes": [
+        0
+      ],
+      "query_attempts": 1,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "tutorial",
+        "overview",
+        "index"
+      ],
+      "scenario": "negative",
+      "schema_version": "1.0",
+      "status": "certified",
+      "stop_reason": "certified",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 5,
+      "total_cost_exact": "5",
+      "trace": [
+        {
+          "answer": 1,
+          "attempt": 1,
+          "candidate": "handbook",
+          "cost": 5,
+          "cost_exact": "5"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "tutorial",
+        "overview",
+        "index"
+      ],
+      "verdict": 0
+    },
+    {
+      "certificate": {
+        "candidates": [
+          "overview"
+        ],
+        "cost": 2,
+        "cost_exact": "2",
+        "labels": {
+          "overview": 1
+        },
+        "relative_to_initial_labels": true,
+        "size": 1
+      },
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide",
+        "overview"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "cheapest_relevant",
+      "possible_outcomes": [
+        0
+      ],
+      "query_attempts": 2,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "handbook",
+        "index"
+      ],
+      "scenario": "negative",
+      "schema_version": "1.0",
+      "status": "certified",
+      "stop_reason": "certified",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 3,
+      "total_cost_exact": "3",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 1,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "handbook",
+        "index"
+      ],
+      "verdict": 0
+    },
+    {
+      "certificate": {
+        "candidates": [
+          "overview"
+        ],
+        "cost": 2,
+        "cost_exact": "2",
+        "labels": {
+          "overview": 1
+        },
+        "relative_to_initial_labels": true,
+        "size": 1
+      },
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide",
+        "overview"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "plugin:cost_sensitive_policy.py",
+      "possible_outcomes": [
+        0
+      ],
+      "query_attempts": 2,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "handbook",
+        "index"
+      ],
+      "scenario": "negative",
+      "schema_version": "1.0",
+      "status": "certified",
+      "stop_reason": "certified",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 3,
+      "total_cost_exact": "3",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 1,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "handbook",
+        "index"
+      ],
+      "verdict": 0
+    },
+    {
+      "certificate": {
+        "candidates": [
+          "handbook",
+          "tutorial",
+          "overview"
+        ],
+        "cost": 8,
+        "cost_exact": "8",
+        "labels": {
+          "handbook": 0,
+          "overview": 0,
+          "tutorial": 0
+        },
+        "relative_to_initial_labels": true,
+        "size": 3
+      },
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "handbook",
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "max_blockers",
+      "possible_outcomes": [
+        1
+      ],
+      "query_attempts": 3,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "index"
+      ],
+      "scenario": "positive",
+      "schema_version": "1.0",
+      "status": "certified",
+      "stop_reason": "certified",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 8,
+      "total_cost_exact": "8",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "handbook",
+          "cost": 5,
+          "cost_exact": "5"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 3,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": 1
+    },
+    {
+      "certificate": {
+        "candidates": [
+          "handbook",
+          "tutorial",
+          "overview"
+        ],
+        "cost": 8,
+        "cost_exact": "8",
+        "labels": {
+          "handbook": 0,
+          "overview": 0,
+          "tutorial": 0
+        },
+        "relative_to_initial_labels": true,
+        "size": 3
+      },
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "handbook",
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "cheapest_relevant",
+      "possible_outcomes": [
+        1
+      ],
+      "query_attempts": 3,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "index"
+      ],
+      "scenario": "positive",
+      "schema_version": "1.0",
+      "status": "certified",
+      "stop_reason": "certified",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 8,
+      "total_cost_exact": "8",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        },
+        {
+          "answer": 0,
+          "attempt": 3,
+          "candidate": "handbook",
+          "cost": 5,
+          "cost_exact": "5"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": 1
+    },
+    {
+      "certificate": {
+        "candidates": [
+          "handbook",
+          "tutorial",
+          "overview"
+        ],
+        "cost": 8,
+        "cost_exact": "8",
+        "labels": {
+          "handbook": 0,
+          "overview": 0,
+          "tutorial": 0
+        },
+        "relative_to_initial_labels": true,
+        "size": 3
+      },
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "handbook",
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "plugin:cost_sensitive_policy.py",
+      "possible_outcomes": [
+        1
+      ],
+      "query_attempts": 3,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "index"
+      ],
+      "scenario": "positive",
+      "schema_version": "1.0",
+      "status": "certified",
+      "stop_reason": "certified",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 8,
+      "total_cost_exact": "8",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        },
+        {
+          "answer": 0,
+          "attempt": 3,
+          "candidate": "handbook",
+          "cost": 5,
+          "cost_exact": "5"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": 1
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 1,
+      "policy": "max_blockers",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 3,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "handbook",
+        "index"
+      ],
+      "scenario": "nonanswer",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "no_certifying_completion_from_available_queries",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 8,
+      "total_cost_exact": "8",
+      "trace": [
+        {
+          "answer": null,
+          "attempt": 1,
+          "candidate": "handbook",
+          "cost": 5,
+          "cost_exact": "5"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 3,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        }
+      ],
+      "unavailable_unknown": [
+        "handbook"
+      ],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 1,
+      "policy": "cheapest_relevant",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 3,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "handbook",
+        "index"
+      ],
+      "scenario": "nonanswer",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "no_certifying_completion_from_available_queries",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 8,
+      "total_cost_exact": "8",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        },
+        {
+          "answer": null,
+          "attempt": 3,
+          "candidate": "handbook",
+          "cost": 5,
+          "cost_exact": "5"
+        }
+      ],
+      "unavailable_unknown": [
+        "handbook"
+      ],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 1,
+      "policy": "plugin:cost_sensitive_policy.py",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 3,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "handbook",
+        "index"
+      ],
+      "scenario": "nonanswer",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "no_certifying_completion_from_available_queries",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 8,
+      "total_cost_exact": "8",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        },
+        {
+          "answer": null,
+          "attempt": 3,
+          "candidate": "handbook",
+          "cost": 5,
+          "cost_exact": "5"
+        }
+      ],
+      "unavailable_unknown": [
+        "handbook"
+      ],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-unavailable-01",
+      "nonanswers": 0,
+      "policy": "max_blockers",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 2,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "handbook",
+        "index"
+      ],
+      "scenario": "unavailable",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "no_certifying_completion_from_available_queries",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 3,
+      "total_cost_exact": "3",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        }
+      ],
+      "unavailable_unknown": [
+        "handbook"
+      ],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-unavailable-01",
+      "nonanswers": 0,
+      "policy": "cheapest_relevant",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 2,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "handbook",
+        "index"
+      ],
+      "scenario": "unavailable",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "no_certifying_completion_from_available_queries",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 3,
+      "total_cost_exact": "3",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        }
+      ],
+      "unavailable_unknown": [
+        "handbook"
+      ],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "overview",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-unavailable-01",
+      "nonanswers": 0,
+      "policy": "plugin:cost_sensitive_policy.py",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 2,
+      "relevant_available": [],
+      "remaining_unknown": [
+        "handbook",
+        "index"
+      ],
+      "scenario": "unavailable",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "no_certifying_completion_from_available_queries",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 3,
+      "total_cost_exact": "3",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        },
+        {
+          "answer": 0,
+          "attempt": 2,
+          "candidate": "overview",
+          "cost": 2,
+          "cost_exact": "2"
+        }
+      ],
+      "unavailable_unknown": [
+        "handbook"
+      ],
+      "unqueried_available": [
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "max_blockers",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 1,
+      "relevant_available": [
+        "handbook",
+        "overview"
+      ],
+      "remaining_unknown": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "scenario": "cost_budget",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "cost_budget_exhausted",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 1,
+      "total_cost_exact": "1",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "cheapest_relevant",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 1,
+      "relevant_available": [
+        "handbook",
+        "overview"
+      ],
+      "remaining_unknown": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "scenario": "cost_budget",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "cost_budget_exhausted",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 1,
+      "total_cost_exact": "1",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "plugin:cost_sensitive_policy.py",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 1,
+      "relevant_available": [
+        "handbook",
+        "overview"
+      ],
+      "remaining_unknown": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "scenario": "cost_budget",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "cost_budget_exhausted",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 1,
+      "total_cost_exact": "1",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "handbook",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "max_blockers",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 1,
+      "relevant_available": [
+        "tutorial",
+        "overview"
+      ],
+      "remaining_unknown": [
+        "tutorial",
+        "overview",
+        "index"
+      ],
+      "scenario": "attempt_budget",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "attempt_budget_exhausted",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 5,
+      "total_cost_exact": "5",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "handbook",
+          "cost": 5,
+          "cost_exact": "5"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "tutorial",
+        "overview",
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "cheapest_relevant",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 1,
+      "relevant_available": [
+        "handbook",
+        "overview"
+      ],
+      "remaining_unknown": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "scenario": "attempt_budget",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "attempt_budget_exhausted",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 1,
+      "total_cost_exact": "1",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "verdict": null
+    },
+    {
+      "certificate": null,
+      "cost_unit": "synthetic verification units",
+      "final_negative": [
+        "tutorial",
+        "glossary"
+      ],
+      "final_positive": [
+        "guide"
+      ],
+      "instance_id": "synthetic-open-resources-01",
+      "nonanswers": 0,
+      "policy": "plugin:cost_sensitive_policy.py",
+      "possible_outcomes": [
+        0,
+        1
+      ],
+      "query_attempts": 1,
+      "relevant_available": [
+        "handbook",
+        "overview"
+      ],
+      "remaining_unknown": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "scenario": "attempt_budget",
+      "schema_version": "1.0",
+      "status": "unresolved",
+      "stop_reason": "attempt_budget_exhausted",
+      "strict_blockers": {
+        "editor_a": [
+          "handbook",
+          "tutorial"
+        ],
+        "editor_b": [
+          "handbook",
+          "overview"
+        ],
+        "editor_c": [
+          "tutorial",
+          "overview"
+        ]
+      },
+      "synthetic": true,
+      "total_cost": 1,
+      "total_cost_exact": "1",
+      "trace": [
+        {
+          "answer": 0,
+          "attempt": 1,
+          "candidate": "tutorial",
+          "cost": 1,
+          "cost_exact": "1"
+        }
+      ],
+      "unavailable_unknown": [],
+      "unqueried_available": [
+        "handbook",
+        "overview",
+        "index"
+      ],
+      "verdict": null
+    }
+  ]
+}

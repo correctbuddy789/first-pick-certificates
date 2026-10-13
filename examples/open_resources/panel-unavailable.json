@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "instance_id": "synthetic-open-resources-unavailable-01",
+  "synthetic": true,
+  "description": "Same wholly synthetic fixed panel; the handbook's eligibility cannot be queried. It remains an unrestricted unknown, not an ineligible resource.",
+  "candidates": ["guide", "handbook", "tutorial", "overview", "index", "glossary"],
+  "pick": "guide",
+  "quorum": 2,
+  "tiers_csv": "tiers.csv",
+  "eligibility": {"positive": ["guide"], "negative": ["glossary"]},
+  "available": ["tutorial", "overview", "index"],
+  "costs": {"handbook": 5, "tutorial": 1, "overview": 2, "index": 0},
+  "cost_unit": "synthetic verification units"
+}

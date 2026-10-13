@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "status": "Internal design amendment frozen after the original study and independent review, before running the additional policies; not a preregistration.",
+  "fixed_utc": "2026-10-13T11:19:29.915591+00:00",
+  "purpose": "Paired acquisition-policy comparison on existing synthetic cases; no new human data or performance-population inference.",
+  "original_design_sha256": "59ee3372073974d78f1a115c6b247696fef9992eb1fd57b327c02b773b76018d",
+  "protected_inputs": {
+    "computational_design.json": "59ee3372073974d78f1a115c6b247696fef9992eb1fd57b327c02b773b76018d",
+    "computational-results.json": "01a659bb6d0b3171f4c7f04ce8e94ede6ba2a706bbb4c231a870d04cc7ca7b8e",
+    "computational-results.csv": "17bfd6495b348f926d8b8e308684f2abe6653bc0e081941d7880ba2df1c6726c",
+    "computational-checks.json": "429ffef5d85cfa12ce43c82dd6eaa54ba4eb9f09d9e9ffe1ad7aa5ffce329de9",
+    "computational_study.py": "ff15e5bfad57f4e60498bd351f8a5b2be8f361ea011e0590fa7869d4c9eb48f8",
+    "query_policies.py": "a537dbe1575b52ce3b4eb2c86dcedd5e7ee187a65078ef9fcfa60e4637b202bb",
+    "certificates.py": "df49733a4764ba7e788e0aadb4e6ec376bcdb7d7b3f79489f111d8fee2796594"
+  },
+  "selection": {
+    "factorial": "nonanswer_probability == 0.0; no filtering by eligibility, outcome, initial certification, or method performance",
+    "constructed": "family in [positive_multilabel, coverage_negative]; no other filtering",
+    "expected_factorial_instances": 1024,
+    "expected_constructed_instances": 128,
+    "expected_instances": 1152,
+    "reason": "Restrict the Allen acquisition comparator to always-answer binary query settings. Constructed cases test algorithm behavior, not the product-distribution theorem."
+  },
+  "methods": [
+    "uniform_all",
+    "pick_first_max_blockers",
+    "pick_first_uniform_blockers",
+    "uniform_relevant",
+    "cheapest_relevant",
+    "pick_first_cost_normalized_blockers",
+    "allen_round_robin_cached"
+  ],
+  "random_tie_replicates": 4,
+  "randomization": "Reuse original stable_seed(original_seed, tie, instance_id, replicate) for the five existing methods and the new cost-normalized blocker method. Allen comparator uses deterministic candidate/term index tie breaks and repeats identical traces across the four replicate slots; do not count these as independent replicates.",
+  "cost_normalized_blocker": "Pick first if unknown and available; otherwise maximize open-judge incidence divided by cost among available candidates with positive incidence. A judge is open when no known eligible blocker exists. For zero cost, maximize incidence among zero-cost candidates. Ties use the seeded uniform choice. No relevance oracle.",
+  "allen_source": {
+    "published": "Allen, Hellerstein, Kletenik, and Ünlüyurt, Evaluation of DNF Formulas, Algorithmica (2017), Section 5.2, with modified round robin Algorithm 1 in Section 5.1",
+    "read_source": "https://www.cs.cmu.edu/afs/cs/user/srallen/www/papers/dnfeval.pdf",
+    "scope": "Read Section 5.2, Algorithm 1, and definitions/protocol context in Section 5.1. Source algorithms deliberately keep separate test histories."
+  },
+  "allen_formula": "Complement all competitor eligibility variables; the pick variable retains positive eligibility. Form all h-judge quorum terms, condition on initial known labels, deduplicate and absorb supersets. Keep all unqueried variables logically unknown. At most binomial(m,h) terms, 70 in the selected design.",
+  "allen_algorithm": "Two virtual streams with independent revealed-label histories. Alg0 maximizes number of uncovered DNF terms containing the variable divided by its test cost, removing terms only on a revealed zero. Alg1 evaluates original conditioned terms in nondecreasing total cost, then lexicographic order, testing their variables in nondecreasing cost then index; within a selected term it evaluates every not-yet-locally-tested variable (Section 5.2). Each stream reuses its own earlier tests. Choose Alg0 if K0+cost(next0) <= K1+cost(next1), else Alg1. A virtual test always increments that stream ledger by its original cost, including when a physical answer is already cached. No branch reads the other branch history. Stop through the shared global certification contract as soon as the union of revealed labels decides membership.",
+  "allen_adaptation": "Physical answers are cached so a candidate is acquired and charged at most once; repeated virtual tests consume cached answers and still incur virtual ledger cost. The common terminal contract may stop sooner than either private virtual stream would. Report this as the Allen et al. round-robin comparator with cached answers and common stopping, not a verbatim reproduction. Do not assert a new approximation guarantee or transfer the theorem to failed queries.",
+  "terminal_contract": "Use original classify/can_certify_with terminal contract on actual global revealed labels and available queries for all seven methods; initial certificates incur zero attempted queries and acquisition cost. Verify all selected no-nonanswer records end certified at the same true membership.",
+  "required_outputs": [
+    "All per-instance/per-replicate query and cost results for all seven policies",
+    "Initial and final certification counts with explicit denominators",
+    "All cases plus factorial/constructed, unit/heterogeneous, and constructed-family strata",
+    "Per-instance-mean paired cost/query differences and cheaper/equal/dearer counts for every policy pair",
+    "Original five method aggregates exactly reproduce the selected rows of the frozen original CSV",
+    "Cold policy initialization plus selection/update overhead measured separately from the shared stopping and answer lookup; all raw per-trace timings, exploratory single environment",
+    "Raw and absorbed term counts; physical versus virtual query/cost metrics for the cached comparator"
+  ],
+  "verification": [
+    "Independent explicit-tier evaluation for formula conversion over small complete and partial assignments",
+    "Independent hand-derived round-robin choices with unequal/zero costs and cached/shared variables; virtual ledgers versus unique acquisition charges",
+    "Term evaluation persists after its first zero unless global certification terminates",
+    "Exhaustive binary records on seeded small instances using independent tier-world oracle, correct terminal outcomes, no duplicate acquisition and cost sums",
+    "Policy constructors and selection never receive hidden responses; guarded response access only after selection",
+    "No edits to original study design, implementations or results"
+  ],
+  "timing": "Single cold replay per instance/policy/replicate. Record construction and selection-plus-observe seconds and per-query values; no comparative inferential statistics. Report exact traces once, rather than timing repetitions chosen after seeing values."
+}

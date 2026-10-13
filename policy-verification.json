@@ -1,0 +1,77 @@
+{
+  "legacy_relevance_and_orders": {
+    "seed": 1729,
+    "random_profiles": 1000,
+    "partial_state_relevance_checks": 42112,
+    "full_priority_orders_checked": 1542,
+    "result": "PASS"
+  },
+  "all_quorum_relevance": {
+    "candidates": 3,
+    "panel_sizes": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "quorums": "every integer from one to panel size",
+    "blocker_profiles": 340,
+    "profile_quorum_pairs": 1252,
+    "partial_label_states": 33804,
+    "availability_states": 80128,
+    "states_with_unavailable_unknowns": 46324,
+    "mixed_available_unavailable_states": 22536,
+    "mask_relevance_checks": 80128,
+    "dnf_relevance_checks": 80128,
+    "boolean_context_checks": 80128,
+    "cached_context_checks": 160256,
+    "current_unknown_api_checks": 160256,
+    "cost_selection_checks": 320512,
+    "cost_schemes": [
+      "unit",
+      "all_zero",
+      "mixed_zero",
+      "fractional_zero"
+    ]
+  },
+  "independent_policy_checks": {
+    "fixture_candidates": 4,
+    "fixture_judges": 3,
+    "quorums": [
+      1,
+      2,
+      3
+    ],
+    "methods": [
+      "uniform_all",
+      "pick_first_uniform_all",
+      "pick_first_max_blockers",
+      "pick_first_uniform_blockers",
+      "uniform_relevant",
+      "pick_first_uniform_relevant",
+      "cheapest_relevant"
+    ],
+    "costs_by_candidate": {
+      "0": 2,
+      "1": 0,
+      "2": 1,
+      "3": 3
+    },
+    "answer_patterns": 243,
+    "complete_priority_orders": 5832,
+    "independent_replay_checks": 122472,
+    "relevance_contexts": [
+      "mask",
+      "dnf",
+      "truth_table"
+    ],
+    "exact_distribution_checks": 1701
+  },
+  "nonanswer_regressions": {
+    "unavailable_unknown_remains_relevant": "PASS",
+    "nonanswer_pick_can_be_bypassed_by_blockers": "PASS",
+    "indispensable_unavailable_pick_stops_uncertified": "PASS"
+  },
+  "elapsed_seconds": 25.983,
+  "result": "PASS"
+}

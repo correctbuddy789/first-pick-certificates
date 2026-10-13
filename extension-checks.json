@@ -1,0 +1,25 @@
+{
+  "checks": {
+    "all_variables_in_selected_term_cases": 1,
+    "complete_policy_traces": 3136,
+    "explicit_tier_world_comparisons": 26320,
+    "free_fractional_cost_cases": 1,
+    "hand_derived_cache_ledger_cases": 1,
+    "hand_derived_cost_normalized_choices": 3,
+    "hand_derived_next_cost_scheduler_cases": 1,
+    "independent_terminal_states": 7876,
+    "invalid_cost_rejections": 3,
+    "nonanswer_rejections": 1,
+    "original_replay_trace_matches": 2240,
+    "partial_states_checked": 6750,
+    "virtual_ledger_steps": 336
+  },
+  "design_sha256": "2b82686ad26d44cc2c3fc1462cf04434e881145df11065a10e209b4aac61f052",
+  "passed": true,
+  "scope": "Finite independent tier-world checks and hand-derived examples; no approximation theorem, human-data validation, or external peer review implied.",
+  "sources": {
+    "benchmark_extensions.py": "0596297c1a6cd83436d823e8813b129047e0addf94c5c33edc8eca4a09ecae30",
+    "dnf_baselines.py": "600d22fafd3233fa5a4d8d79090c1981060b411feeabb07f99b1ed8811b3a2e6",
+    "verify_dnf_baselines.py": "4317e31be487f8fc19a5538f6f457b1506f97a345db381b6783d12a5f4a657e4"
+  }
+}

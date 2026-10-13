@@ -1,0 +1,4063 @@
+{
+  "analysis": "Exploratory secondary rule sensitivity and independent policy reconstruction; no new judgments or model runs",
+  "case_unit": "Requisition; all variants reuse the same ten requisitions and four judges",
+  "remaining_unknown_labels": 7,
+  "joint_final_binary_completions": 128,
+  "completion_interpretation": "Unrestricted pair-specific binary completions; no probability assigned to completions",
+  "negative_type_precedence": [
+    "empty_eligible_pool",
+    "target_ineligible_in_nonempty_pool",
+    "eligible_target_but_no_quorum_top_set",
+    "eligible_target_excluded_from_nonempty_top_set"
+  ],
+  "tier_coarsening": "For each judge, sort occupied distinct tiers best-first and merge ranks (1,2), (3,4), ... before eligibility restriction; retain original ties",
+  "occupied_tier_count_histograms": {
+    "unit": "Judge-by-requisition order; 40 orders from four judges on ten requisitions",
+    "recorded": {
+      "2": 2,
+      "3": 38
+    },
+    "coarsened": {
+      "1": 2,
+      "2": 38
+    }
+  },
+  "eligibility_rule": "Original strict H1 consensus and recorded binary eligibility adjudications unchanged",
+  "original_study_provenance": {
+    "protocol_version": "1.0",
+    "registered_utc": "2026-07-28T08:31:31Z",
+    "registration_url": "https://osf.io/f7nsd/",
+    "embargo_until": "2027-04-01",
+    "ranking_run_date": "2026-07-29",
+    "annotation_export_date": "2026-08-26",
+    "provenance_source": "Local registration record and frozen manifest; registration is embargoed",
+    "freeze_manifest_project_upload_date": "2026-08-28"
+  },
+  "input_sha256": {
+    "pilot/data/export-20260826.json": "ee4c4088186ca327a0baf1433ff1f4276fd81d39a954f767d56edd453d8b9c4e",
+    "pilot/data/den_ranks.json": "1ca8400ebc6a782654213bdf12110965aa04961d7885c552b8b536f4306fe4c8"
+  },
+  "rule_sensitivity": [
+    {
+      "tier_policy": "recorded",
+      "quorum": 1,
+      "initial": {
+        "certified_memberships": 3,
+        "certified_nonmemberships": 0,
+        "ambiguous": 7,
+        "mean_membership_bounds": [
+          0.3,
+          1.0
+        ],
+        "empty_eligible_pool_count_bounds": [
+          0,
+          2
+        ],
+        "empty_top_set_count_bounds": [
+          0,
+          2
+        ]
+      },
+      "final": {
+        "certified_memberships": 7,
+        "certified_nonmemberships": 2,
+        "ambiguous": 1,
+        "mean_membership_bounds": [
+          0.7,
+          0.8
+        ],
+        "empty_eligible_pool_count_bounds": [
+          1,
+          1
+        ],
+        "empty_top_set_count_bounds": [
+          1,
+          1
+        ]
+      },
+      "final_negative_decomposition": {
+        "scope": "certified nonmemberships",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            1
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "all_final_completions_negative_decomposition": {
+        "scope": "all requisitions",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "rows": [
+        {
+          "requisition": "e1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            5,
+            6
+          ],
+          "final_top_set_size_bounds": [
+            4,
+            4
+          ]
+        },
+        {
+          "requisition": "e2",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            12,
+            12
+          ],
+          "final_top_set_size_bounds": [
+            11,
+            11
+          ]
+        },
+        {
+          "requisition": "e3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 2048,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            9,
+            10
+          ],
+          "final_top_set_size_bounds": [
+            9,
+            9
+          ]
+        },
+        {
+          "requisition": "e4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            5,
+            6
+          ]
+        },
+        {
+          "requisition": "e5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 256,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0,
+            1
+          ],
+          "initial_completion_count": 128,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            3,
+            4
+          ],
+          "final_top_set_size_bounds": [
+            3,
+            4
+          ]
+        },
+        {
+          "requisition": "p2",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            10,
+            11
+          ],
+          "final_top_set_size_bounds": [
+            9,
+            10
+          ]
+        },
+        {
+          "requisition": "p3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "empty_eligible_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            0,
+            0
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 16,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            8,
+            8
+          ],
+          "final_top_set_size_bounds": [
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "tier_policy": "recorded",
+      "quorum": 2,
+      "initial": {
+        "certified_memberships": 3,
+        "certified_nonmemberships": 2,
+        "ambiguous": 5,
+        "mean_membership_bounds": [
+          0.3,
+          0.8
+        ],
+        "empty_eligible_pool_count_bounds": [
+          0,
+          2
+        ],
+        "empty_top_set_count_bounds": [
+          0,
+          2
+        ]
+      },
+      "final": {
+        "certified_memberships": 5,
+        "certified_nonmemberships": 4,
+        "ambiguous": 1,
+        "mean_membership_bounds": [
+          0.5,
+          0.6
+        ],
+        "empty_eligible_pool_count_bounds": [
+          1,
+          1
+        ],
+        "empty_top_set_count_bounds": [
+          1,
+          1
+        ]
+      },
+      "final_negative_decomposition": {
+        "scope": "certified nonmemberships",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            1
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            2,
+            2
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 2
+          }
+        ]
+      },
+      "all_final_completions_negative_decomposition": {
+        "scope": "all requisitions",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            2,
+            2
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 2
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 2
+          }
+        ]
+      },
+      "rows": [
+        {
+          "requisition": "e1",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            5,
+            6
+          ],
+          "final_top_set_size_bounds": [
+            3,
+            3
+          ]
+        },
+        {
+          "requisition": "e2",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "eligible_target_excluded_from_nonempty_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            12,
+            12
+          ],
+          "final_top_set_size_bounds": [
+            8,
+            8
+          ]
+        },
+        {
+          "requisition": "e3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 2048,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            9,
+            10
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            6
+          ]
+        },
+        {
+          "requisition": "e4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            4,
+            5
+          ]
+        },
+        {
+          "requisition": "e5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 256,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0,
+            1
+          ],
+          "initial_completion_count": 128,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            3,
+            4
+          ],
+          "final_top_set_size_bounds": [
+            2,
+            3
+          ]
+        },
+        {
+          "requisition": "p2",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            10,
+            11
+          ],
+          "final_top_set_size_bounds": [
+            8,
+            8
+          ]
+        },
+        {
+          "requisition": "p3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "eligible_target_excluded_from_nonempty_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            3,
+            4
+          ]
+        },
+        {
+          "requisition": "p4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "empty_eligible_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            0,
+            0
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 16,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            8,
+            8
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            6
+          ]
+        }
+      ]
+    },
+    {
+      "tier_policy": "recorded",
+      "quorum": 3,
+      "initial": {
+        "certified_memberships": 2,
+        "certified_nonmemberships": 3,
+        "ambiguous": 5,
+        "mean_membership_bounds": [
+          0.2,
+          0.7
+        ],
+        "empty_eligible_pool_count_bounds": [
+          0,
+          2
+        ],
+        "empty_top_set_count_bounds": [
+          0,
+          4
+        ]
+      },
+      "final": {
+        "certified_memberships": 3,
+        "certified_nonmemberships": 6,
+        "ambiguous": 1,
+        "mean_membership_bounds": [
+          0.3,
+          0.4
+        ],
+        "empty_eligible_pool_count_bounds": [
+          1,
+          1
+        ],
+        "empty_top_set_count_bounds": [
+          2,
+          3
+        ]
+      },
+      "final_negative_decomposition": {
+        "scope": "certified nonmemberships",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            1
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            1,
+            2
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            2,
+            3
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 1,
+            "eligible_target_excluded_from_nonempty_top_set": 3
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 2,
+            "eligible_target_excluded_from_nonempty_top_set": 2
+          }
+        ]
+      },
+      "all_final_completions_negative_decomposition": {
+        "scope": "all requisitions",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            1,
+            2
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            2,
+            3
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 1,
+            "eligible_target_excluded_from_nonempty_top_set": 3
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 2,
+            "eligible_target_excluded_from_nonempty_top_set": 2
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 1,
+            "eligible_target_excluded_from_nonempty_top_set": 3
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 2,
+            "eligible_target_excluded_from_nonempty_top_set": 2
+          }
+        ]
+      },
+      "rows": [
+        {
+          "requisition": "e1",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            5,
+            6
+          ],
+          "final_top_set_size_bounds": [
+            3,
+            3
+          ]
+        },
+        {
+          "requisition": "e2",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "eligible_target_excluded_from_nonempty_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            12,
+            12
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            6
+          ]
+        },
+        {
+          "requisition": "e3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 2048,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            9,
+            10
+          ],
+          "final_top_set_size_bounds": [
+            4,
+            4
+          ]
+        },
+        {
+          "requisition": "e4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "eligible_target_but_no_quorum_top_set",
+            "eligible_target_excluded_from_nonempty_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            1
+          ]
+        },
+        {
+          "requisition": "e5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 256,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            4,
+            5
+          ]
+        },
+        {
+          "requisition": "p1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0,
+            1
+          ],
+          "initial_completion_count": 128,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            3,
+            4
+          ],
+          "final_top_set_size_bounds": [
+            1,
+            2
+          ]
+        },
+        {
+          "requisition": "p2",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            10,
+            11
+          ],
+          "final_top_set_size_bounds": [
+            7,
+            7
+          ]
+        },
+        {
+          "requisition": "p3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "eligible_target_but_no_quorum_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "empty_eligible_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            0,
+            0
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p5",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 16,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "eligible_target_excluded_from_nonempty_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            8,
+            8
+          ],
+          "final_top_set_size_bounds": [
+            3,
+            3
+          ]
+        }
+      ]
+    },
+    {
+      "tier_policy": "recorded",
+      "quorum": 4,
+      "initial": {
+        "certified_memberships": 1,
+        "certified_nonmemberships": 6,
+        "ambiguous": 3,
+        "mean_membership_bounds": [
+          0.1,
+          0.4
+        ],
+        "empty_eligible_pool_count_bounds": [
+          0,
+          2
+        ],
+        "empty_top_set_count_bounds": [
+          3,
+          8
+        ]
+      },
+      "final": {
+        "certified_memberships": 2,
+        "certified_nonmemberships": 8,
+        "ambiguous": 0,
+        "mean_membership_bounds": [
+          0.2,
+          0.2
+        ],
+        "empty_eligible_pool_count_bounds": [
+          1,
+          1
+        ],
+        "empty_top_set_count_bounds": [
+          7,
+          7
+        ]
+      },
+      "final_negative_decomposition": {
+        "scope": "certified nonmemberships",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            5,
+            6
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 6,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 5,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "all_final_completions_negative_decomposition": {
+        "scope": "all requisitions",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            5,
+            6
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 6,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 5,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "rows": [
+        {
+          "requisition": "e1",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            5,
+            6
+          ],
+          "final_top_set_size_bounds": [
+            1,
+            1
+          ]
+        },
+        {
+          "requisition": "e2",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "eligible_target_but_no_quorum_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            12,
+            12
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "e3",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 2048,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "eligible_target_but_no_quorum_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            9,
+            10
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "e4",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "eligible_target_but_no_quorum_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "e5",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 256,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            1,
+            1
+          ]
+        },
+        {
+          "requisition": "p1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 128,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "eligible_target_but_no_quorum_top_set",
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            3,
+            4
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p2",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            10,
+            11
+          ],
+          "final_top_set_size_bounds": [
+            3,
+            3
+          ]
+        },
+        {
+          "requisition": "p3",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "eligible_target_but_no_quorum_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "empty_eligible_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            0,
+            0
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p5",
+          "initial_possible_outcomes": [
+            0
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 16,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "eligible_target_but_no_quorum_top_set"
+          ],
+          "final_eligible_pool_size_bounds": [
+            8,
+            8
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "tier_policy": "adjacent_pairs",
+      "quorum": 1,
+      "initial": {
+        "certified_memberships": 3,
+        "certified_nonmemberships": 0,
+        "ambiguous": 7,
+        "mean_membership_bounds": [
+          0.3,
+          1.0
+        ],
+        "empty_eligible_pool_count_bounds": [
+          0,
+          2
+        ],
+        "empty_top_set_count_bounds": [
+          0,
+          2
+        ]
+      },
+      "final": {
+        "certified_memberships": 7,
+        "certified_nonmemberships": 2,
+        "ambiguous": 1,
+        "mean_membership_bounds": [
+          0.7,
+          0.8
+        ],
+        "empty_eligible_pool_count_bounds": [
+          1,
+          1
+        ],
+        "empty_top_set_count_bounds": [
+          1,
+          1
+        ]
+      },
+      "final_negative_decomposition": {
+        "scope": "certified nonmemberships",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            1
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "all_final_completions_negative_decomposition": {
+        "scope": "all requisitions",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "rows": [
+        {
+          "requisition": "e1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            5,
+            6
+          ],
+          "final_top_set_size_bounds": [
+            5,
+            6
+          ]
+        },
+        {
+          "requisition": "e2",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            12,
+            12
+          ],
+          "final_top_set_size_bounds": [
+            12,
+            12
+          ]
+        },
+        {
+          "requisition": "e3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 2048,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            9,
+            10
+          ],
+          "final_top_set_size_bounds": [
+            9,
+            10
+          ]
+        },
+        {
+          "requisition": "e4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "e5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 256,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0,
+            1
+          ],
+          "initial_completion_count": 128,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            3,
+            4
+          ],
+          "final_top_set_size_bounds": [
+            3,
+            4
+          ]
+        },
+        {
+          "requisition": "p2",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            10,
+            11
+          ],
+          "final_top_set_size_bounds": [
+            10,
+            11
+          ]
+        },
+        {
+          "requisition": "p3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "empty_eligible_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            0,
+            0
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 16,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            8,
+            8
+          ],
+          "final_top_set_size_bounds": [
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "tier_policy": "adjacent_pairs",
+      "quorum": 2,
+      "initial": {
+        "certified_memberships": 3,
+        "certified_nonmemberships": 0,
+        "ambiguous": 7,
+        "mean_membership_bounds": [
+          0.3,
+          1.0
+        ],
+        "empty_eligible_pool_count_bounds": [
+          0,
+          2
+        ],
+        "empty_top_set_count_bounds": [
+          0,
+          2
+        ]
+      },
+      "final": {
+        "certified_memberships": 7,
+        "certified_nonmemberships": 2,
+        "ambiguous": 1,
+        "mean_membership_bounds": [
+          0.7,
+          0.8
+        ],
+        "empty_eligible_pool_count_bounds": [
+          1,
+          1
+        ],
+        "empty_top_set_count_bounds": [
+          1,
+          1
+        ]
+      },
+      "final_negative_decomposition": {
+        "scope": "certified nonmemberships",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            1
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "all_final_completions_negative_decomposition": {
+        "scope": "all requisitions",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "rows": [
+        {
+          "requisition": "e1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            5,
+            6
+          ],
+          "final_top_set_size_bounds": [
+            5,
+            6
+          ]
+        },
+        {
+          "requisition": "e2",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            12,
+            12
+          ],
+          "final_top_set_size_bounds": [
+            12,
+            12
+          ]
+        },
+        {
+          "requisition": "e3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 2048,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            9,
+            10
+          ],
+          "final_top_set_size_bounds": [
+            9,
+            10
+          ]
+        },
+        {
+          "requisition": "e4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "e5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 256,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0,
+            1
+          ],
+          "initial_completion_count": 128,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            3,
+            4
+          ],
+          "final_top_set_size_bounds": [
+            3,
+            4
+          ]
+        },
+        {
+          "requisition": "p2",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            10,
+            11
+          ],
+          "final_top_set_size_bounds": [
+            10,
+            11
+          ]
+        },
+        {
+          "requisition": "p3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "empty_eligible_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            0,
+            0
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 16,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            8,
+            8
+          ],
+          "final_top_set_size_bounds": [
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "tier_policy": "adjacent_pairs",
+      "quorum": 3,
+      "initial": {
+        "certified_memberships": 3,
+        "certified_nonmemberships": 0,
+        "ambiguous": 7,
+        "mean_membership_bounds": [
+          0.3,
+          1.0
+        ],
+        "empty_eligible_pool_count_bounds": [
+          0,
+          2
+        ],
+        "empty_top_set_count_bounds": [
+          0,
+          2
+        ]
+      },
+      "final": {
+        "certified_memberships": 7,
+        "certified_nonmemberships": 2,
+        "ambiguous": 1,
+        "mean_membership_bounds": [
+          0.7,
+          0.8
+        ],
+        "empty_eligible_pool_count_bounds": [
+          1,
+          1
+        ],
+        "empty_top_set_count_bounds": [
+          1,
+          1
+        ]
+      },
+      "final_negative_decomposition": {
+        "scope": "certified nonmemberships",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            1
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "all_final_completions_negative_decomposition": {
+        "scope": "all requisitions",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "rows": [
+        {
+          "requisition": "e1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            5,
+            6
+          ],
+          "final_top_set_size_bounds": [
+            4,
+            5
+          ]
+        },
+        {
+          "requisition": "e2",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            12,
+            12
+          ],
+          "final_top_set_size_bounds": [
+            12,
+            12
+          ]
+        },
+        {
+          "requisition": "e3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 2048,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            9,
+            10
+          ],
+          "final_top_set_size_bounds": [
+            9,
+            10
+          ]
+        },
+        {
+          "requisition": "e4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "e5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 256,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0,
+            1
+          ],
+          "initial_completion_count": 128,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            3,
+            4
+          ],
+          "final_top_set_size_bounds": [
+            2,
+            3
+          ]
+        },
+        {
+          "requisition": "p2",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            10,
+            11
+          ],
+          "final_top_set_size_bounds": [
+            9,
+            10
+          ]
+        },
+        {
+          "requisition": "p3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            6,
+            7
+          ]
+        },
+        {
+          "requisition": "p4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "empty_eligible_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            0,
+            0
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 16,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            8,
+            8
+          ],
+          "final_top_set_size_bounds": [
+            8,
+            8
+          ]
+        }
+      ]
+    },
+    {
+      "tier_policy": "adjacent_pairs",
+      "quorum": 4,
+      "initial": {
+        "certified_memberships": 3,
+        "certified_nonmemberships": 0,
+        "ambiguous": 7,
+        "mean_membership_bounds": [
+          0.3,
+          1.0
+        ],
+        "empty_eligible_pool_count_bounds": [
+          0,
+          2
+        ],
+        "empty_top_set_count_bounds": [
+          0,
+          2
+        ]
+      },
+      "final": {
+        "certified_memberships": 7,
+        "certified_nonmemberships": 2,
+        "ambiguous": 1,
+        "mean_membership_bounds": [
+          0.7,
+          0.8
+        ],
+        "empty_eligible_pool_count_bounds": [
+          1,
+          1
+        ],
+        "empty_top_set_count_bounds": [
+          1,
+          1
+        ]
+      },
+      "final_negative_decomposition": {
+        "scope": "certified nonmemberships",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            1
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "all_final_completions_negative_decomposition": {
+        "scope": "all requisitions",
+        "joint_completion_count": 128,
+        "subtype_count_bounds": {
+          "empty_eligible_pool": [
+            1,
+            1
+          ],
+          "target_ineligible_in_nonempty_pool": [
+            1,
+            2
+          ],
+          "eligible_target_but_no_quorum_top_set": [
+            0,
+            0
+          ],
+          "eligible_target_excluded_from_nonempty_top_set": [
+            0,
+            0
+          ]
+        },
+        "attainable_subtype_count_vectors": [
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 1,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          },
+          {
+            "empty_eligible_pool": 1,
+            "target_ineligible_in_nonempty_pool": 2,
+            "eligible_target_but_no_quorum_top_set": 0,
+            "eligible_target_excluded_from_nonempty_top_set": 0
+          }
+        ]
+      },
+      "rows": [
+        {
+          "requisition": "e1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            5,
+            6
+          ],
+          "final_top_set_size_bounds": [
+            2,
+            2
+          ]
+        },
+        {
+          "requisition": "e2",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            12,
+            12
+          ],
+          "final_top_set_size_bounds": [
+            11,
+            11
+          ]
+        },
+        {
+          "requisition": "e3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 2048,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            9,
+            10
+          ],
+          "final_top_set_size_bounds": [
+            5,
+            6
+          ]
+        },
+        {
+          "requisition": "e4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            4,
+            4
+          ]
+        },
+        {
+          "requisition": "e5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 256,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            4,
+            4
+          ]
+        },
+        {
+          "requisition": "p1",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0,
+            1
+          ],
+          "initial_completion_count": 128,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [
+            "target_ineligible_in_nonempty_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            3,
+            4
+          ],
+          "final_top_set_size_bounds": [
+            2,
+            3
+          ]
+        },
+        {
+          "requisition": "p2",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            10,
+            11
+          ],
+          "final_top_set_size_bounds": [
+            9,
+            10
+          ]
+        },
+        {
+          "requisition": "p3",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 512,
+          "final_completion_count": 2,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            6,
+            7
+          ],
+          "final_top_set_size_bounds": [
+            5,
+            6
+          ]
+        },
+        {
+          "requisition": "p4",
+          "initial_possible_outcomes": [
+            0,
+            1
+          ],
+          "final_possible_outcomes": [
+            0
+          ],
+          "initial_completion_count": 64,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [
+            "empty_eligible_pool"
+          ],
+          "final_eligible_pool_size_bounds": [
+            0,
+            0
+          ],
+          "final_top_set_size_bounds": [
+            0,
+            0
+          ]
+        },
+        {
+          "requisition": "p5",
+          "initial_possible_outcomes": [
+            1
+          ],
+          "final_possible_outcomes": [
+            1
+          ],
+          "initial_completion_count": 16,
+          "final_completion_count": 1,
+          "final_possible_negative_types": [],
+          "final_eligible_pool_size_bounds": [
+            8,
+            8
+          ],
+          "final_top_set_size_bounds": [
+            8,
+            8
+          ]
+        }
+      ]
+    }
+  ],
+  "independent_policy_comparison": {
+    "unit": "Total attempted eligibility queries across the same ten requisitions",
+    "randomization": "Independent uniform fixed priorities within each requisition",
+    "oracle": "Direct panel top sets, truth-table edges, available-variable world groups",
+    "enumerated_restricted_priority_orders": 1158,
+    "aggregate": {
+      "pick_first_max_blockers": {
+        "mean_exact": "31/3",
+        "mean": 10.333333333333334,
+        "minimum": 9,
+        "maximum": 12,
+        "distribution": [
+          {
+            "queries": 9,
+            "probability_exact": "2/9"
+          },
+          {
+            "queries": 10,
+            "probability_exact": "1/3"
+          },
+          {
+            "queries": 11,
+            "probability_exact": "1/3"
+          },
+          {
+            "queries": 12,
+            "probability_exact": "1/9"
+          }
+        ]
+      },
+      "pick_first_uniform_blockers": {
+        "mean_exact": "9",
+        "mean": 9.0,
+        "minimum": 7,
+        "maximum": 12,
+        "distribution": [
+          {
+            "queries": 7,
+            "probability_exact": "2/15"
+          },
+          {
+            "queries": 8,
+            "probability_exact": "7/30"
+          },
+          {
+            "queries": 9,
+            "probability_exact": "3/10"
+          },
+          {
+            "queries": 10,
+            "probability_exact": "1/5"
+          },
+          {
+            "queries": 11,
+            "probability_exact": "1/10"
+          },
+          {
+            "queries": 12,
+            "probability_exact": "1/30"
+          }
+        ]
+      },
+      "pick_first_uniform_relevant": {
+        "mean_exact": "9",
+        "mean": 9.0,
+        "minimum": 7,
+        "maximum": 12,
+        "distribution": [
+          {
+            "queries": 7,
+            "probability_exact": "2/15"
+          },
+          {
+            "queries": 8,
+            "probability_exact": "7/30"
+          },
+          {
+            "queries": 9,
+            "probability_exact": "3/10"
+          },
+          {
+            "queries": 10,
+            "probability_exact": "1/5"
+          },
+          {
+            "queries": 11,
+            "probability_exact": "1/10"
+          },
+          {
+            "queries": 12,
+            "probability_exact": "1/30"
+          }
+        ]
+      },
+      "uniform_relevant": {
+        "mean_exact": "47/6",
+        "mean": 7.833333333333333,
+        "minimum": 5,
+        "maximum": 12,
+        "distribution": [
+          {
+            "queries": 5,
+            "probability_exact": "1/12"
+          },
+          {
+            "queries": 6,
+            "probability_exact": "3/20"
+          },
+          {
+            "queries": 7,
+            "probability_exact": "1/5"
+          },
+          {
+            "queries": 8,
+            "probability_exact": "7/30"
+          },
+          {
+            "queries": 9,
+            "probability_exact": "1/6"
+          },
+          {
+            "queries": 10,
+            "probability_exact": "1/10"
+          },
+          {
+            "queries": 11,
+            "probability_exact": "1/20"
+          },
+          {
+            "queries": 12,
+            "probability_exact": "1/60"
+          }
+        ]
+      },
+      "uniform_all": {
+        "mean_exact": "131/6",
+        "mean": 21.833333333333332,
+        "minimum": 5,
+        "maximum": 41,
+        "distribution": [
+          {
+            "queries": 5,
+            "probability_exact": "1/18711"
+          },
+          {
+            "queries": 6,
+            "probability_exact": "13/49896"
+          },
+          {
+            "queries": 7,
+            "probability_exact": "19/24948"
+          },
+          {
+            "queries": 8,
+            "probability_exact": "37/21384"
+          },
+          {
+            "queries": 9,
+            "probability_exact": "1/297"
+          },
+          {
+            "queries": 10,
+            "probability_exact": "7/1188"
+          },
+          {
+            "queries": 11,
+            "probability_exact": "355/37422"
+          },
+          {
+            "queries": 12,
+            "probability_exact": "2131/149688"
+          },
+          {
+            "queries": 13,
+            "probability_exact": "335/16632"
+          },
+          {
+            "queries": 14,
+            "probability_exact": "193/7128"
+          },
+          {
+            "queries": 15,
+            "probability_exact": "2605/74844"
+          },
+          {
+            "queries": 16,
+            "probability_exact": "3215/74844"
+          },
+          {
+            "queries": 17,
+            "probability_exact": "955/18711"
+          },
+          {
+            "queries": 18,
+            "probability_exact": "4381/74844"
+          },
+          {
+            "queries": 19,
+            "probability_exact": "347/5346"
+          },
+          {
+            "queries": 20,
+            "probability_exact": "745/10692"
+          },
+          {
+            "queries": 21,
+            "probability_exact": "452/6237"
+          },
+          {
+            "queries": 22,
+            "probability_exact": "10937/149688"
+          },
+          {
+            "queries": 23,
+            "probability_exact": "1/14"
+          },
+          {
+            "queries": 24,
+            "probability_exact": "2533/37422"
+          },
+          {
+            "queries": 25,
+            "probability_exact": "443/7128"
+          },
+          {
+            "queries": 26,
+            "probability_exact": "94/1701"
+          },
+          {
+            "queries": 27,
+            "probability_exact": "3557/74844"
+          },
+          {
+            "queries": 28,
+            "probability_exact": "211/5346"
+          },
+          {
+            "queries": 29,
+            "probability_exact": "2363/74844"
+          },
+          {
+            "queries": 30,
+            "probability_exact": "454/18711"
+          },
+          {
+            "queries": 31,
+            "probability_exact": "191/10692"
+          },
+          {
+            "queries": 32,
+            "probability_exact": "313/24948"
+          },
+          {
+            "queries": 33,
+            "probability_exact": "139/16632"
+          },
+          {
+            "queries": 34,
+            "probability_exact": "785/149688"
+          },
+          {
+            "queries": 35,
+            "probability_exact": "461/149688"
+          },
+          {
+            "queries": 36,
+            "probability_exact": "1/594"
+          },
+          {
+            "queries": 37,
+            "probability_exact": "1/1188"
+          },
+          {
+            "queries": 38,
+            "probability_exact": "1/2673"
+          },
+          {
+            "queries": 39,
+            "probability_exact": "1/7128"
+          },
+          {
+            "queries": 40,
+            "probability_exact": "1/24948"
+          },
+          {
+            "queries": 41,
+            "probability_exact": "1/149688"
+          }
+        ]
+      },
+      "pick_first_uniform_all": {
+        "mean_exact": "25/2",
+        "mean": 12.5,
+        "minimum": 7,
+        "maximum": 20,
+        "distribution": [
+          {
+            "queries": 7,
+            "probability_exact": "1/32"
+          },
+          {
+            "queries": 8,
+            "probability_exact": "13/224"
+          },
+          {
+            "queries": 9,
+            "probability_exact": "9/112"
+          },
+          {
+            "queries": 10,
+            "probability_exact": "11/112"
+          },
+          {
+            "queries": 11,
+            "probability_exact": "25/224"
+          },
+          {
+            "queries": 12,
+            "probability_exact": "27/224"
+          },
+          {
+            "queries": 13,
+            "probability_exact": "1/8"
+          },
+          {
+            "queries": 14,
+            "probability_exact": "1/8"
+          },
+          {
+            "queries": 15,
+            "probability_exact": "3/32"
+          },
+          {
+            "queries": 16,
+            "probability_exact": "15/224"
+          },
+          {
+            "queries": 17,
+            "probability_exact": "5/112"
+          },
+          {
+            "queries": 18,
+            "probability_exact": "3/112"
+          },
+          {
+            "queries": 19,
+            "probability_exact": "3/224"
+          },
+          {
+            "queries": 20,
+            "probability_exact": "1/224"
+          }
+        ]
+      }
+    },
+    "rows": [
+      {
+        "requisition": "e1",
+        "initial_relevant_variables": 0,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "e2",
+        "initial_relevant_variables": 0,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "e3",
+        "initial_relevant_variables": 1,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "6",
+            "mean": 6.0,
+            "minimum": 1,
+            "maximum": 11,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 2,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 6,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 7,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 8,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 9,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 10,
+                "probability_exact": "1/11"
+              },
+              {
+                "queries": 11,
+                "probability_exact": "1/11"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "e4",
+        "initial_relevant_variables": 4,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "3",
+            "mean": 3.0,
+            "minimum": 2,
+            "maximum": 4,
+            "distribution": [
+              {
+                "queries": 2,
+                "probability_exact": "1/3"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/3"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/3"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "3",
+            "mean": 3.0,
+            "minimum": 2,
+            "maximum": 4,
+            "distribution": [
+              {
+                "queries": 2,
+                "probability_exact": "1/3"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/3"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/3"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "3",
+            "mean": 3.0,
+            "minimum": 2,
+            "maximum": 4,
+            "distribution": [
+              {
+                "queries": 2,
+                "probability_exact": "1/3"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/3"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/3"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "5/2",
+            "mean": 2.5,
+            "minimum": 1,
+            "maximum": 4,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1/4"
+              },
+              {
+                "queries": 2,
+                "probability_exact": "1/4"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/4"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/4"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "5",
+            "mean": 5.0,
+            "minimum": 1,
+            "maximum": 9,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 2,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 6,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 7,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 8,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 9,
+                "probability_exact": "1/9"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "11/2",
+            "mean": 5.5,
+            "minimum": 2,
+            "maximum": 9,
+            "distribution": [
+              {
+                "queries": 2,
+                "probability_exact": "1/8"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/8"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/8"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/8"
+              },
+              {
+                "queries": 6,
+                "probability_exact": "1/8"
+              },
+              {
+                "queries": 7,
+                "probability_exact": "1/8"
+              },
+              {
+                "queries": 8,
+                "probability_exact": "1/8"
+              },
+              {
+                "queries": 9,
+                "probability_exact": "1/8"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "e5",
+        "initial_relevant_variables": 0,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "p1",
+        "initial_relevant_variables": 1,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "4",
+            "mean": 4.0,
+            "minimum": 1,
+            "maximum": 7,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1/7"
+              },
+              {
+                "queries": 2,
+                "probability_exact": "1/7"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/7"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/7"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/7"
+              },
+              {
+                "queries": 6,
+                "probability_exact": "1/7"
+              },
+              {
+                "queries": 7,
+                "probability_exact": "1/7"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "p2",
+        "initial_relevant_variables": 0,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "p3",
+        "initial_relevant_variables": 6,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "13/3",
+            "mean": 4.333333333333333,
+            "minimum": 4,
+            "maximum": 5,
+            "distribution": [
+              {
+                "queries": 4,
+                "probability_exact": "2/3"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/3"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "3",
+            "mean": 3.0,
+            "minimum": 2,
+            "maximum": 5,
+            "distribution": [
+              {
+                "queries": 2,
+                "probability_exact": "2/5"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "3/10"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/5"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/10"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "3",
+            "mean": 3.0,
+            "minimum": 2,
+            "maximum": 5,
+            "distribution": [
+              {
+                "queries": 2,
+                "probability_exact": "2/5"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "3/10"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/5"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/10"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "7/3",
+            "mean": 2.3333333333333335,
+            "minimum": 1,
+            "maximum": 5,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1/3"
+              },
+              {
+                "queries": 2,
+                "probability_exact": "4/15"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/5"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "2/15"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/15"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "10/3",
+            "mean": 3.3333333333333335,
+            "minimum": 1,
+            "maximum": 8,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "2/9"
+              },
+              {
+                "queries": 2,
+                "probability_exact": "7/36"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/6"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "5/36"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/9"
+              },
+              {
+                "queries": 6,
+                "probability_exact": "1/12"
+              },
+              {
+                "queries": 7,
+                "probability_exact": "1/18"
+              },
+              {
+                "queries": 8,
+                "probability_exact": "1/36"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "4",
+            "mean": 4.0,
+            "minimum": 2,
+            "maximum": 8,
+            "distribution": [
+              {
+                "queries": 2,
+                "probability_exact": "1/4"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "3/14"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "5/28"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/7"
+              },
+              {
+                "queries": 6,
+                "probability_exact": "3/28"
+              },
+              {
+                "queries": 7,
+                "probability_exact": "1/14"
+              },
+              {
+                "queries": 8,
+                "probability_exact": "1/28"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "p4",
+        "initial_relevant_variables": 1,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "7/2",
+            "mean": 3.5,
+            "minimum": 1,
+            "maximum": 6,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1/6"
+              },
+              {
+                "queries": 2,
+                "probability_exact": "1/6"
+              },
+              {
+                "queries": 3,
+                "probability_exact": "1/6"
+              },
+              {
+                "queries": 4,
+                "probability_exact": "1/6"
+              },
+              {
+                "queries": 5,
+                "probability_exact": "1/6"
+              },
+              {
+                "queries": 6,
+                "probability_exact": "1/6"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "1",
+            "mean": 1.0,
+            "minimum": 1,
+            "maximum": 1,
+            "distribution": [
+              {
+                "queries": 1,
+                "probability_exact": "1"
+              }
+            ]
+          }
+        }
+      },
+      {
+        "requisition": "p5",
+        "initial_relevant_variables": 0,
+        "policies": {
+          "pick_first_max_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_blockers": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_relevant": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          },
+          "pick_first_uniform_all": {
+            "mean_exact": "0",
+            "mean": 0.0,
+            "minimum": 0,
+            "maximum": 0,
+            "distribution": [
+              {
+                "queries": 0,
+                "probability_exact": "1"
+              }
+            ]
+          }
+        }
+      }
+    ]
+  },
+  "verification": {
+    "direct_initial_top_set_completions_per_rule": 4176,
+    "direct_final_top_set_completions_per_rule": 17,
+    "rule_variants": 8,
+    "all_initial_and_final_outcome_sets_match_certificate_classifier": true,
+    "all_policy_orders_preserve_full_evidence_outcome_sets": true,
+    "inputs_unchanged": true
+  }
+}

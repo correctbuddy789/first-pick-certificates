@@ -1,0 +1,264 @@
+{
+  "analysis": "Exploratory exact sensitivity analysis; no new human judgments or model runs",
+  "scope": "Recorded query counts for one fixed mechanical membership decision per requisition",
+  "semantics": "All policies use complete fixed preference tiers, revealed eligibility answers only, and identical certification and unavailable-answer stopping rules",
+  "ordering": "Uniform fixed priority independently per requisition; exhaustive permutations of all potentially relevant variables; irrelevant variable positions integrate out",
+  "requisitions": 10,
+  "initially_uncertified": 5,
+  "initial_relevant_variables_in_active_instances_sorted": [
+    1,
+    1,
+    1,
+    4,
+    6
+  ],
+  "deterministic_index_tie_heuristic_queries": 10,
+  "uniform_all_order_expected_queries": 21.833333333333332,
+  "pick_first_uniform_all_expected_queries": 12.5,
+  "pick_first_uniform_all_expected_queries_exact": "25/2",
+  "policies": {
+    "pick_first_max_blockers": {
+      "query_count": {
+        "mean": 10.333333333333334,
+        "mean_exact": "31/3",
+        "minimum": 9,
+        "maximum": 12,
+        "distribution": [
+          {
+            "queries": 9,
+            "probability": 0.2222222222222222,
+            "probability_exact": "2/9"
+          },
+          {
+            "queries": 10,
+            "probability": 0.3333333333333333,
+            "probability_exact": "1/3"
+          },
+          {
+            "queries": 11,
+            "probability": 0.3333333333333333,
+            "probability_exact": "1/3"
+          },
+          {
+            "queries": 12,
+            "probability": 0.1111111111111111,
+            "probability_exact": "1/9"
+          }
+        ]
+      },
+      "unanswered_query_count": {
+        "mean": 2.0,
+        "mean_exact": "2",
+        "minimum": 2,
+        "maximum": 2,
+        "distribution": [
+          {
+            "queries": 2,
+            "probability": 1.0,
+            "probability_exact": "1"
+          }
+        ]
+      },
+      "per_instance_priority_orders_enumerated": 136
+    },
+    "pick_first_uniform_blockers": {
+      "query_count": {
+        "mean": 9.0,
+        "mean_exact": "9",
+        "minimum": 7,
+        "maximum": 12,
+        "distribution": [
+          {
+            "queries": 7,
+            "probability": 0.13333333333333333,
+            "probability_exact": "2/15"
+          },
+          {
+            "queries": 8,
+            "probability": 0.23333333333333334,
+            "probability_exact": "7/30"
+          },
+          {
+            "queries": 9,
+            "probability": 0.3,
+            "probability_exact": "3/10"
+          },
+          {
+            "queries": 10,
+            "probability": 0.2,
+            "probability_exact": "1/5"
+          },
+          {
+            "queries": 11,
+            "probability": 0.1,
+            "probability_exact": "1/10"
+          },
+          {
+            "queries": 12,
+            "probability": 0.03333333333333333,
+            "probability_exact": "1/30"
+          }
+        ]
+      },
+      "unanswered_query_count": {
+        "mean": 1.3333333333333333,
+        "mean_exact": "4/3",
+        "minimum": 1,
+        "maximum": 2,
+        "distribution": [
+          {
+            "queries": 1,
+            "probability": 0.6666666666666666,
+            "probability_exact": "2/3"
+          },
+          {
+            "queries": 2,
+            "probability": 0.3333333333333333,
+            "probability_exact": "1/3"
+          }
+        ]
+      },
+      "per_instance_priority_orders_enumerated": 136
+    },
+    "pick_first_uniform_relevant": {
+      "query_count": {
+        "mean": 9.0,
+        "mean_exact": "9",
+        "minimum": 7,
+        "maximum": 12,
+        "distribution": [
+          {
+            "queries": 7,
+            "probability": 0.13333333333333333,
+            "probability_exact": "2/15"
+          },
+          {
+            "queries": 8,
+            "probability": 0.23333333333333334,
+            "probability_exact": "7/30"
+          },
+          {
+            "queries": 9,
+            "probability": 0.3,
+            "probability_exact": "3/10"
+          },
+          {
+            "queries": 10,
+            "probability": 0.2,
+            "probability_exact": "1/5"
+          },
+          {
+            "queries": 11,
+            "probability": 0.1,
+            "probability_exact": "1/10"
+          },
+          {
+            "queries": 12,
+            "probability": 0.03333333333333333,
+            "probability_exact": "1/30"
+          }
+        ]
+      },
+      "unanswered_query_count": {
+        "mean": 1.3333333333333333,
+        "mean_exact": "4/3",
+        "minimum": 1,
+        "maximum": 2,
+        "distribution": [
+          {
+            "queries": 1,
+            "probability": 0.6666666666666666,
+            "probability_exact": "2/3"
+          },
+          {
+            "queries": 2,
+            "probability": 0.3333333333333333,
+            "probability_exact": "1/3"
+          }
+        ]
+      },
+      "per_instance_priority_orders_enumerated": 134
+    },
+    "uniform_relevant": {
+      "query_count": {
+        "mean": 7.833333333333333,
+        "mean_exact": "47/6",
+        "minimum": 5,
+        "maximum": 12,
+        "distribution": [
+          {
+            "queries": 5,
+            "probability": 0.08333333333333333,
+            "probability_exact": "1/12"
+          },
+          {
+            "queries": 6,
+            "probability": 0.15,
+            "probability_exact": "3/20"
+          },
+          {
+            "queries": 7,
+            "probability": 0.2,
+            "probability_exact": "1/5"
+          },
+          {
+            "queries": 8,
+            "probability": 0.23333333333333334,
+            "probability_exact": "7/30"
+          },
+          {
+            "queries": 9,
+            "probability": 0.16666666666666666,
+            "probability_exact": "1/6"
+          },
+          {
+            "queries": 10,
+            "probability": 0.1,
+            "probability_exact": "1/10"
+          },
+          {
+            "queries": 11,
+            "probability": 0.05,
+            "probability_exact": "1/20"
+          },
+          {
+            "queries": 12,
+            "probability": 0.016666666666666666,
+            "probability_exact": "1/60"
+          }
+        ]
+      },
+      "unanswered_query_count": {
+        "mean": 1.3333333333333333,
+        "mean_exact": "4/3",
+        "minimum": 1,
+        "maximum": 2,
+        "distribution": [
+          {
+            "queries": 1,
+            "probability": 0.6666666666666666,
+            "probability_exact": "2/3"
+          },
+          {
+            "queries": 2,
+            "probability": 0.3333333333333333,
+            "probability_exact": "1/3"
+          }
+        ]
+      },
+      "per_instance_priority_orders_enumerated": 752
+    }
+  },
+  "input_sha256": {
+    "pilot/data/export-20260826.json": "ee4c4088186ca327a0baf1433ff1f4276fd81d39a954f767d56edd453d8b9c4e",
+    "pilot/data/den_ranks.json": "1ca8400ebc6a782654213bdf12110965aa04961d7885c552b8b536f4306fe4c8"
+  },
+  "synthetic_verification": {
+    "seed": 1729,
+    "random_profiles": 1000,
+    "partial_state_relevance_checks": 42112,
+    "full_priority_orders_checked": 1542,
+    "result": "PASS"
+  },
+  "result": "PASS: all final outcome sets match full recorded evidence; deterministic replay reproduced; frozen inputs unchanged"
+}

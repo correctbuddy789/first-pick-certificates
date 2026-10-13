@@ -1,0 +1,14 @@
+{
+  "schema_version": "1.0",
+  "instance_id": "synthetic-open-resources-01",
+  "synthetic": true,
+  "description": "Illustrative institutional learning-resource recommendation. Three fictional subject editors rank a fixed six-resource pool. Eligibility means verified permission for course reuse; all names, tiers, labels, costs, and responses are synthetic.",
+  "candidates": ["guide", "handbook", "tutorial", "overview", "index", "glossary"],
+  "pick": "guide",
+  "quorum": 2,
+  "tiers_csv": "tiers.csv",
+  "eligibility": {"positive": ["guide"], "negative": ["glossary"]},
+  "available": ["handbook", "tutorial", "overview", "index"],
+  "costs": {"handbook": 5, "tutorial": 1, "overview": 2, "index": 0},
+  "cost_unit": "synthetic verification units"
+}

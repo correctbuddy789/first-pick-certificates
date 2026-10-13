@@ -1,0 +1,39 @@
+{
+  "design_sha256": "59ee3372073974d78f1a115c6b247696fef9992eb1fd57b327c02b773b76018d",
+  "elapsed_seconds": 343.5742168109864,
+  "exact_online_enumeration": {
+    "bellman_states": 253040,
+    "bellman_states_checked_against_world_oracle": 253040,
+    "full_records_for_optimal_policy_enumeration": 50752,
+    "offline_certificates_checked_by_subset_enumeration": 38272
+  },
+  "independent_oracle": {
+    "complete_policy_traces": 58320,
+    "distinct_state_checks": 5711,
+    "elapsed_seconds": 10.168506945949048,
+    "full_ternary_records": 5832,
+    "guarded_answer_reads": 121104,
+    "passed": true,
+    "profiles_with_quorum": 36,
+    "records_with_nonanswers": 4968,
+    "scope": "Twelve seeded five-candidate structures, all quorums for panels of two/three/four; every ternary full record, two tie seeds per method; zero and positive costs.",
+    "selection_checks": 121104,
+    "weighted_certificate_checks": 11664
+  },
+  "passed": true,
+  "source_sha256": {
+    "certificates.py": "df49733a4764ba7e788e0aadb4e6ec376bcdb7d7b3f79489f111d8fee2796594",
+    "computational_study.py": "ff15e5bfad57f4e60498bd351f8a5b2be8f361ea011e0590fa7869d4c9eb48f8",
+    "query_policies.py": "a537dbe1575b52ce3b4eb2c86dcedd5e7ee187a65078ef9fcfa60e4637b202bb"
+  },
+  "stored_results": {
+    "all_main_aggregates_reconstructed_from_csv": true,
+    "csv_rows": 11520,
+    "design_hash_matches": true,
+    "exact_online_cases": 128,
+    "main_instances": 2304,
+    "passed": true,
+    "runtime_profiles": 48,
+    "source_hashes_match": true
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "exhaustive": {
+    "weak_orders": 13,
+    "preference_profiles": 2197,
+    "partial_state_bounds": 59319,
+    "available_query_stopping_states": 140608,
+    "minimum_certificate_checks": 35152
+  },
+  "randomized": {
+    "seed": 20261012,
+    "profiles": 1000,
+    "partial_state_bounds": 1000,
+    "minimum_certificate_checks": 2000,
+    "policy_checks": 2000
+  },
+  "random_order_baseline": {
+    "historical_answer_patterns": 81,
+    "permutations_checked": 1944
+  },
+  "extended_parameters": {
+    "seed": 20261013,
+    "profiles": 300,
+    "profile_quorum_pairs": 1197,
+    "panel_size_range": [
+      1,
+      7
+    ],
+    "candidate_count_range": [
+      2,
+      7
+    ],
+    "quorums": "every integer from one to panel size",
+    "quorum_one_cases": 300,
+    "quorum_all_judges_cases": 300,
+    "cost_schemes": [
+      "unit",
+      "all_zero",
+      "mixed_zero",
+      "fractional_zero"
+    ],
+    "partial_state_bounds": 2394,
+    "available_query_stopping_states": 13071,
+    "stopping_states_with_unavailable_unknowns": 11874,
+    "minimum_certificate_checks": 9576,
+    "zero_cost_nonempty_certificates": 780,
+    "certificates_with_multiple_labels": 100,
+    "blocker_only_negative_certificates": 536,
+    "unavailable_certificate_cases": 5572
+  },
+  "totals": {
+    "partial_state_bounds": 62713,
+    "available_query_stopping_states": 153679,
+    "minimum_certificate_checks": 46728,
+    "policy_checks": 2000
+  },
+  "elapsed_seconds": 13.613,
+  "result": "PASS"
+}
